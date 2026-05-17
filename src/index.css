@@ -1,0 +1,18 @@
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { margin: 0; padding: 0; width: 100%; height: 100%; }
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  color: #000;
+  background: #FDFCFC;
+  -webkit-font-smoothing: antialiased;
+}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #E5E5E5; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #ccc; }
+::placeholder { color: #8A847E; font-family: 'Source Serif 4', Georgia, serif; }
+textarea, input, button { font-family: 'Source Serif 4', Georgia, serif; }
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-4px); }
+}
