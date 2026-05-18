@@ -77,13 +77,14 @@ const ContentArea = forwardRef(function ContentArea({ chapter, activeExercise, o
 
   return (
     <main className="main" ref={ref}>
-      <img
-        className="hero"
-        src={chapter.heroImage}
-        alt={chapter.title}
-        loading="lazy"
-      />
       <div className="content-wrap">
+
+        <img
+          className="hero"
+          src={chapter.heroImage}
+          alt={chapter.title}
+          loading="lazy"
+        />
 
         <div className="ch-meta">{chapter.meta}</div>
         <h1 className="ch-title">{chapter.title}</h1>

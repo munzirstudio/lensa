@@ -188,13 +188,13 @@ html, body, #root {
 
 .hero {
   display: block;
-  width: 100%;
+  width: calc(100% + 56px);
+  margin-left: -28px;
   height: 360px;
   object-fit: cover;
   border-radius: 2px;
   margin-bottom: 48px;
   background: var(--border);
-  flex-shrink: 0;
 }
 
 .ch-meta  { font-size: 14px; color: var(--text-secondary); line-height: 20px; margin-bottom: 4px; }
