@@ -24,6 +24,7 @@ export default function App() {
     const sectionIds = [
       ...activeChapter.readSections.map(s => s.id),
       ...activeChapter.activities.map(a => a.anchor),
+      ...(activeChapter.resources.length > 0 ? ['resources'] : []),
     ]
 
     function handleScroll() {

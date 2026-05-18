@@ -151,6 +151,9 @@ html, body, #root {
   padding: 12px 8px 20px 44px;
 }
 .toc-h { font-size: 14px; line-height: 20px; color: var(--text-secondary); }
+.toc-h-clickable { cursor: pointer; transition: color 0.1s; }
+.toc-h-clickable:hover { color: var(--text-primary); }
+.toc-h-clickable.active { color: var(--text-primary); font-weight: 500; }
 .toc-item {
   font-size: 14px;
   line-height: 20px;
@@ -188,7 +191,7 @@ html, body, #root {
 }
 
 .ch-meta  { font-size: 14px; color: var(--text-secondary); line-height: 20px; margin-bottom: 4px; }
-.ch-title { font-size: 33px; font-weight: 400; letter-spacing: -0.675px; line-height: 40px; margin-bottom: 12px; }
+.ch-title { font-size: 33px; font-weight: 400; letter-spacing: -0.675px; line-height: 40px; margin-bottom: 42px; }
 .ch-desc  { font-size: 20px; font-weight: 300; color: rgba(38,37,30,.7); line-height: 28px; margin-bottom: 48px; }
 
 .sec-label {
@@ -212,7 +215,7 @@ html, body, #root {
   margin-bottom: 15px;
 }
 
-.prose { font-size: 15px; line-height: 24px; color: var(--text-primary); }
+.prose { font-size: 16px; line-height: 24px; color: var(--text-primary); }
 .prose p { margin-bottom: 16px; }
 .prose p:last-child { margin-bottom: 0; }
 .prose strong { font-weight: 500; }

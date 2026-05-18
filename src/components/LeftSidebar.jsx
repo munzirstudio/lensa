@@ -42,7 +42,10 @@ export default function LeftSidebar({
 
           {chapter.id === activeChapterId && activeChapter && (
             <div className="toc">
-              <div className="toc-h">Read</div>
+              <div
+                className="toc-h toc-h-clickable"
+                onClick={() => onSectionClick(activeChapter.readSections[0]?.id)}
+              >Read</div>
               {activeChapter.readSections.map(section => (
                 <div
                   key={section.id}
@@ -55,7 +58,10 @@ export default function LeftSidebar({
 
               {activeChapter.activities.length > 0 && (
                 <>
-                  <div className="toc-h">Activities</div>
+                  <div
+                    className="toc-h toc-h-clickable"
+                    onClick={() => onSectionClick(activeChapter.activities[0]?.anchor)}
+                  >Activities</div>
                   {activeChapter.activities.map(activity => (
                     <div
                       key={activity.id}
@@ -69,7 +75,10 @@ export default function LeftSidebar({
               )}
 
               {activeChapter.resources.length > 0 && (
-                <div className="toc-h">Resources</div>
+                <div
+                  className={`toc-h toc-h-clickable${activeSectionId === 'resources' ? ' active' : ''}`}
+                  onClick={() => onSectionClick('resources')}
+                >Resources</div>
               )}
             </div>
           )}
