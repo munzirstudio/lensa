@@ -55,7 +55,7 @@ function PromptCard({ exercise, isActive, onActivate }) {
   )
 }
 
-const ContentArea = forwardRef(function ContentArea({ chapter, activeExercise, onActivateExercise }, ref) {
+const ContentArea = forwardRef(function ContentArea({ chapter, activeExercise, onActivateExercise, onNextChapter }, ref) {
   if (!chapter) return null
 
   function isExerciseActive(exerciseId) {
@@ -88,7 +88,6 @@ const ContentArea = forwardRef(function ContentArea({ chapter, activeExercise, o
 
         <div className="ch-meta">{chapter.meta}</div>
         <h1 className="ch-title">{chapter.title}</h1>
-        <p className="ch-desc">{chapter.tagline}</p>
 
         {/* ── READ ── */}
         <div className="sec-label">
@@ -194,7 +193,7 @@ const ContentArea = forwardRef(function ContentArea({ chapter, activeExercise, o
         <div className="completion-card">
           <div className="completion-label">You've completed this chapter</div>
           {nextChapterAvailable && (
-            <button className="keep-learning">
+            <button className="keep-learning" onClick={onNextChapter}>
               Keep learning
               <IconChevron />
             </button>

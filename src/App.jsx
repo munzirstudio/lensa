@@ -68,7 +68,7 @@ export default function App() {
     setActiveChapterId(chapterId)
     setActiveExercise(null)
     if (mainRef.current) {
-      mainRef.current.scrollTo({ top: 0, behavior: 'smooth' })
+      mainRef.current.scrollTop = 0
     }
   }
 
@@ -98,6 +98,7 @@ export default function App() {
           chapter={activeChapter}
           activeExercise={activeExercise}
           onActivateExercise={activateExercise}
+          onNextChapter={() => handleChapterClick(activeChapterId + 1)}
         />
         <RightSidebar
           open={rightSidebarOpen}

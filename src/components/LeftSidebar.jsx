@@ -1,7 +1,6 @@
 export default function LeftSidebar({
   chapters,
   activeChapterId,
-  activeExercise,
   activeSectionId,
   onChapterClick,
   onSectionClick,
@@ -13,13 +12,7 @@ export default function LeftSidebar({
   }
 
   function isActivityActive(activity) {
-    // Highlight by scroll position OR by active exercise
-    if (activeSectionId === activity.anchor) return true
-    if (!activeExercise) return false
-    return (
-      activeExercise.chapterId === activeChapterId &&
-      activity.exerciseIds.includes(activeExercise.exerciseId)
-    )
+    return activeSectionId === activity.anchor
   }
 
   return (
