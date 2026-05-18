@@ -44,24 +44,26 @@ export default function App() {
     return () => container.removeEventListener('scroll', handleScroll)
   }, [activeChapterId, activeChapter])
 
-  function activateExercise(chapterId, exerciseId) {
-    // Toggle: clicking the already-active card collapses the sidebar
+  function activateExercise(chapterId, exerciseId, view = 'prompt') {
+    // Toggle: same exercise + same view collapses the sidebar
     if (
       activeExercise?.chapterId === chapterId &&
-      activeExercise?.exerciseId === exerciseId
+      activeExercise?.exerciseId === exerciseId &&
+      activeExercise?.view === view
     ) {
       setRightSidebarOpen(false)
       setActiveExercise(null)
       return
     }
-    setActiveExercise({ chapterId, exerciseId })
+    setActiveExercise({ chapterId, exerciseId, view })
     setRightSidebarOpen(true)
   }
 
   function getActiveExerciseData() {
     if (!activeExercise) return null
     const chapter = CHAPTERS.find(c => c.id === activeExercise.chapterId)
-    return chapter?.exercises.find(e => e.id === activeExercise.exerciseId) ?? null
+    const exercise = chapter?.exercises.find(e => e.id === activeExercise.exerciseId) ?? null
+    return { exercise, view: activeExercise.view ?? 'prompt' }
   }
 
   function handleChapterClick(chapterId) {
@@ -102,7 +104,8 @@ export default function App() {
         />
         <RightSidebar
           open={rightSidebarOpen}
-          exercise={getActiveExerciseData()}
+          exercise={getActiveExerciseData()?.exercise ?? null}
+          view={getActiveExerciseData()?.view ?? 'prompt'}
         />
       </div>
     </div>

@@ -37,7 +37,7 @@ function PromptCard({ exercise, isActive, onActivate }) {
   return (
     <div
       className={`prompt-card${isActive ? ' active' : ''}`}
-      onClick={() => onActivate(exercise)}
+      onClick={() => onActivate(exercise, 'prompt')}
     >
       <div className="card-label">
         <IconClock />
@@ -46,10 +46,18 @@ function PromptCard({ exercise, isActive, onActivate }) {
       <div className="card-actions">
         <button
           className="btn btn-dark"
-          onClick={e => { e.stopPropagation(); onActivate(exercise) }}
+          onClick={e => { e.stopPropagation(); onActivate(exercise, 'prompt') }}
         >
           View prompt
         </button>
+        {exercise.sample && (
+          <button
+            className="btn btn-light"
+            onClick={e => { e.stopPropagation(); onActivate(exercise, 'sample') }}
+          >
+            View sample
+          </button>
+        )}
       </div>
     </div>
   )
@@ -65,8 +73,8 @@ const ContentArea = forwardRef(function ContentArea({ chapter, activeExercise, o
     )
   }
 
-  function handleActivate(exercise) {
-    onActivateExercise(chapter.id, exercise.id)
+  function handleActivate(exercise, view = 'prompt') {
+    onActivateExercise(chapter.id, exercise.id, view)
   }
 
   function getExercise(exerciseId) {

@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react'
 
-export default function RightSidebar({ open, exercise }) {
+export default function RightSidebar({ open, exercise, view = 'prompt' }) {
   const [copied, setCopied] = useState(false)
 
   useEffect(() => {
     setCopied(false)
-  }, [exercise])
+  }, [exercise, view])
+
+  const content = view === 'sample' ? exercise?.sample : exercise?.prompt
 
   function handleCopy() {
-    if (!exercise) return
-    navigator.clipboard.writeText(exercise.prompt).then(() => {
+    if (!content) return
+    navigator.clipboard.writeText(content).then(() => {
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     })
@@ -25,7 +27,7 @@ export default function RightSidebar({ open, exercise }) {
         <button
           className={`copy-btn${copied ? ' copied' : ''}`}
           onClick={handleCopy}
-          disabled={!exercise}
+          disabled={!content}
         >
           {copied ? (
             <>
@@ -47,7 +49,7 @@ export default function RightSidebar({ open, exercise }) {
       </div>
 
       <div className="sr-body">
-        {exercise && <pre className="prompt-text">{exercise.prompt}</pre>}
+        {content && <pre className="prompt-text">{content}</pre>}
       </div>
     </aside>
   )
