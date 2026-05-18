@@ -1021,7 +1021,7 @@ Do not add features not listed above.`,
     title: 'Test',
     tagline: 'Using AI in testing does not replace the importance of testing with real human users. It makes your prototype more ready — with minimal time and resource cost.',
     meta: '05 · Test',
-    heroImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?w=1200&q=80',
     readSections: [
       {
         id: 'what-is-test',
