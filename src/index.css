@@ -20,7 +20,7 @@ html, body, #root {
   font-family: var(--font-sans);
   background: var(--bg-page);
   color: var(--text-primary);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 24px;
 }
 
@@ -148,14 +148,14 @@ html, body, #root {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 12px 8px 20px 24px;
+  padding: 12px 8px 20px 44px;
 }
 .toc-h { font-size: 14px; line-height: 20px; color: var(--text-secondary); }
 .toc-item {
   font-size: 14px;
   line-height: 20px;
   color: var(--text-secondary);
-  padding-left: 16px;
+  padding-left: 12px;
   cursor: pointer;
   transition: color 0.1s;
 }
@@ -204,18 +204,18 @@ html, body, #root {
 
 .h2 {
   font-size: 22px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.103px;
   line-height: 27px;
   color: var(--text-primary);
-  padding-top: 32px;
+  padding-top: 72px;
   margin-bottom: 15px;
 }
 
 .prose { font-size: 15px; line-height: 24px; color: var(--text-primary); }
 .prose p { margin-bottom: 16px; }
 .prose p:last-child { margin-bottom: 0; }
-.prose strong { font-weight: 600; }
+.prose strong { font-weight: 500; }
 .prose em { font-style: italic; }
 .prose ol, .prose ul { padding-left: 22px; margin-bottom: 16px; }
 .prose ol { list-style: decimal; }
@@ -240,7 +240,7 @@ html, body, #root {
   transition: border-color 0.15s;
 }
 .prompt-card:hover { border-color: #b0afa9; }
-.prompt-card.active { border-color: var(--text-primary); }
+.prompt-card.active { border-color: #b0afa9; }
 
 .card-label {
   display: flex;
@@ -367,21 +367,13 @@ html, body, #root {
   transition: background 0.15s;
 }
 .copy-btn:hover { opacity: 0.9; }
-.copy-btn.copied { background: #2a7a3b; }
-
-.sr-empty {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 24px;
-  color: var(--text-secondary);
-  font-size: 14px;
-  text-align: center;
-  line-height: 22px;
+.copy-btn.copied {
+  background: var(--bg-page);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  opacity: 1;
 }
+
 
 .sr-body {
   flex: 1;

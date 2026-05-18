@@ -1,7 +1,20 @@
-export default function LeftSidebar({ chapters, activeChapterId, activeExercise, onChapterClick, onSectionClick }) {
+export default function LeftSidebar({
+  chapters,
+  activeChapterId,
+  activeExercise,
+  activeSectionId,
+  onChapterClick,
+  onSectionClick,
+}) {
   const activeChapter = chapters.find(c => c.id === activeChapterId)
 
+  function isReadSectionActive(sectionId) {
+    return activeSectionId === sectionId
+  }
+
   function isActivityActive(activity) {
+    // Highlight by scroll position OR by active exercise
+    if (activeSectionId === activity.anchor) return true
     if (!activeExercise) return false
     return (
       activeExercise.chapterId === activeChapterId &&
@@ -33,7 +46,7 @@ export default function LeftSidebar({ chapters, activeChapterId, activeExercise,
               {activeChapter.readSections.map(section => (
                 <div
                   key={section.id}
-                  className="toc-item"
+                  className={`toc-item${isReadSectionActive(section.id) ? ' active' : ''}`}
                   onClick={() => onSectionClick(section.id)}
                 >
                   {section.heading}
@@ -56,9 +69,7 @@ export default function LeftSidebar({ chapters, activeChapterId, activeExercise,
               )}
 
               {activeChapter.resources.length > 0 && (
-                <>
-                  <div className="toc-h">Resources</div>
-                </>
+                <div className="toc-h">Resources</div>
               )}
             </div>
           )}
