@@ -223,7 +223,6 @@ html, body, #root {
 
 .prose { font-size: 16px; line-height: 24px; color: var(--text-primary); }
 .prose p { margin-bottom: 16px; }
-.prose p:last-child { margin-bottom: 0; }
 .prose strong { font-weight: 500; }
 .prose em { font-style: italic; }
 .prose ol, .prose ul { padding-left: 22px; margin-bottom: 16px; }
