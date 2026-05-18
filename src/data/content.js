@@ -167,7 +167,7 @@ Return as a ranked action list with rationale for each item.`,
     title: 'How AI Can Help',
     tagline: 'AI doesn\'t just speed things up. It gives your team the ability to achieve things you previously couldn\'t.',
     meta: '01 · How AI Can Help',
-    heroImage: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80',
     readSections: [
       {
         id: 'the-real-question',
