@@ -169,7 +169,7 @@ html, body, #root {
   transition: color 0.1s;
 }
 .toc-item:hover { color: var(--text-primary); }
-.toc-item.active { color: var(--text-primary); font-weight: 500; }
+.toc-item.active { color: var(--text-primary); }
 
 /* ── Main content ────────────────────────────────────────────────── */
 .main {
