@@ -275,6 +275,7 @@ html, body, #root {
   cursor: pointer;
   white-space: nowrap;
   transition: opacity 0.12s;
+  text-decoration: none;
 }
 .btn:hover { opacity: 0.8; }
 .btn-dark  { background: var(--btn-dark); color: var(--btn-dark-text); border-color: var(--btn-dark); }
