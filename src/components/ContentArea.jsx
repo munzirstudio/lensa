@@ -181,7 +181,20 @@ const ContentArea = forwardRef(function ContentArea({ chapter, activeExercise, o
                   <div className="resource-name">{resource.name}</div>
                   <div className="resource-desc">{resource.description}</div>
                   <div>
-                    <button className="btn btn-light">View</button>
+                    {resource.comingSoon ? (
+                      <button className="btn btn-light" disabled style={{ opacity: 0.4, cursor: 'not-allowed' }}>
+                        Coming soon
+                      </button>
+                    ) : (
+                      <a
+                        className="btn btn-light"
+                        href={resource.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}

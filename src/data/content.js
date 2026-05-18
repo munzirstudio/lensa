@@ -115,9 +115,9 @@ export const CHAPTERS = [
       },
     ],
     resources: [
-      { name: 'Design Thinking Cheat Sheet', description: 'Full reference for all DT stages, tools, and prompts.', link: '#' },
-      { name: 'The Design Thinking Playbook', description: 'Lewrick, Link & Leifer — the foundational text.', link: '#' },
-      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: '#' },
+      { name: 'Design Thinking Cheat Sheet', description: 'Full reference for all DT stages, tools, and prompts.', link: '#', comingSoon: true },
+      { name: 'The Design Thinking Playbook', description: 'Lewrick, Link & Leifer — the foundational text.', link: 'https://www.goodreads.com/book/show/35658438-the-design-thinking-playbook' },
+      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242' },
     ],
     exercises: [
       {
@@ -276,9 +276,9 @@ Return as a ranked action list with rationale for each item.`,
       },
     ],
     resources: [
-      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference document.', link: '#' },
-      { name: 'MIT AI Maturity Model', description: 'MIT CISR Enterprise AI Maturity Model (2024).', link: '#' },
-      { name: 'Context Engineering Template', description: 'Blank 6-component prompt template to print or duplicate.', link: '#' },
+      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference document.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242' },
+      { name: 'MIT AI Maturity Model', description: 'MIT CISR Enterprise AI Maturity Model (2024).', link: 'https://cisr.mit.edu/publication/2023_1201_GenAIMaturity_LaFountainWixom' },
+      { name: 'Context Engineering Template', description: 'Blank 6-component prompt template to print or duplicate.', link: '#', comingSoon: true },
     ],
     exercises: [
       {
@@ -442,9 +442,9 @@ Be direct. We can handle the truth.`,
       },
     ],
     resources: [
-      { name: 'Responsible Use of Synthetic Users', description: 'Ethical and practical guidelines for using AI-generated profiles in research. Read before any synthetic interview.', link: '#' },
-      { name: 'Sample Dataset — Landscape Analysis', description: 'The EV charging sample dataset. Practice before applying to your own problem space.', link: '#' },
-      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference. Your master reference for this entire course.', link: '#' },
+      { name: 'Responsible Use of Synthetic Users', description: 'Ethical and practical guidelines for using AI-generated profiles in research. Read before any synthetic interview.', link: '#', comingSoon: true },
+      { name: 'Sample Dataset — Landscape Analysis', description: 'The EV charging sample dataset. Practice before applying to your own problem space.', link: '#', comingSoon: true },
+      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference. Your master reference for this entire course.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242' },
     ],
     exercises: [
       {
@@ -693,9 +693,9 @@ Rules:
       },
     ],
     resources: [
-      { name: 'Design Thinking Cheat Sheet', description: 'Full Define stage tools and prompt templates.', link: '#' },
-      { name: 'POV Statement Examples', description: 'Good and bad examples of POV statements with analysis.', link: '#' },
-      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: '#' },
+      { name: 'Design Thinking Cheat Sheet', description: 'Full Define stage tools and prompt templates.', link: '#', comingSoon: true },
+      { name: 'POV Statement Examples', description: 'Good and bad examples of POV statements with analysis.', link: '#', comingSoon: true },
+      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242' },
     ],
     exercises: [
       {
@@ -905,10 +905,10 @@ Rules:
       },
     ],
     resources: [
-      { name: 'Lovable.dev', description: 'Vibe coding tool — build web apps from prompts.', link: '#' },
-      { name: 'v0 by Vercel', description: 'Generate UI components from prompts.', link: '#' },
-      { name: 'Figma Make', description: 'AI-assisted prototyping inside Figma.', link: '#' },
-      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: '#' },
+      { name: 'Lovable.dev', description: 'Vibe coding tool — build web apps from prompts.', link: 'https://lovable.dev' },
+      { name: 'v0 by Vercel', description: 'Generate UI components from prompts.', link: 'https://v0.dev' },
+      { name: 'Figma Make', description: 'AI-assisted prototyping inside Figma.', link: 'https://www.figma.com/make' },
+      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242' },
     ],
     exercises: [
       {
@@ -1126,10 +1126,10 @@ Do not add features not listed above.`,
       },
     ],
     resources: [
-      { name: 'Hands-on: Testing with Synthetic User', description: 'Full prompt examples from real Stampede projects.', link: '#' },
-      { name: 'Sample Prompt 1 (Toro Keeper / Azim)', description: 'Complete synthetic UT brief for event timekeeper.', link: '#' },
-      { name: 'Sample Prompt 2 (Dr Aida)', description: 'Complete synthetic UT brief for healthcare prototype.', link: '#' },
-      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: '#' },
+      { name: 'Hands-on: Testing with Synthetic User', description: 'Full prompt examples from real Stampede projects.', link: '#', comingSoon: true },
+      { name: 'Sample Prompt 1 (Toro Keeper / Azim)', description: 'Complete synthetic UT brief for event timekeeper.', link: '#', comingSoon: true },
+      { name: 'Sample Prompt 2 (Dr Aida)', description: 'Complete synthetic UT brief for healthcare prototype.', link: '#', comingSoon: true },
+      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242' },
     ],
     exercises: [
       {
@@ -1351,13 +1351,13 @@ Return as a structured list sorted by severity. No paragraph summaries.`,
       },
     ],
     resources: [
-      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: '#' },
-      { name: 'Zapier', description: 'Simple agentic automation, 8,000+ integrations.', link: '#' },
-      { name: 'Make', description: 'Visual workflow automation for complex multi-step flows.', link: '#' },
-      { name: 'n8n', description: 'Open-source automation for technical teams.', link: '#' },
-      { name: 'Claude Code', description: 'Terminal-based agentic coding tool.', link: '#' },
-      { name: 'Lovable.dev', description: 'Build web apps and prototypes from prompts.', link: '#' },
-      { name: 'Figma Make', description: 'AI-assisted prototyping inside Figma.', link: '#' },
+      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242' },
+      { name: 'Zapier', description: 'Simple agentic automation, 8,000+ integrations.', link: 'https://zapier.com' },
+      { name: 'Make', description: 'Visual workflow automation for complex multi-step flows.', link: 'https://www.make.com' },
+      { name: 'n8n', description: 'Open-source automation for technical teams.', link: 'https://n8n.io' },
+      { name: 'Claude Code', description: 'Terminal-based agentic coding tool.', link: 'https://claude.ai/code' },
+      { name: 'Lovable.dev', description: 'Build web apps and prototypes from prompts.', link: 'https://lovable.dev' },
+      { name: 'Figma Make', description: 'AI-assisted prototyping inside Figma.', link: 'https://www.figma.com/make' },
     ],
     exercises: [
       {
