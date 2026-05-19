@@ -17,7 +17,7 @@ export default function TopBar({ rightSidebarOpen, onToggleSidebar }) {
             <line x1="15" y1="3" x2="15" y2="21"/>
           </svg>
         </button>
-        <button className="profile-pill">Profile</button>
+        {/* <button className="profile-pill">Profile</button> */}
       </div>
     </header>
   )

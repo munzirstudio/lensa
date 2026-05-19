@@ -117,7 +117,7 @@ export const CHAPTERS = [
     resources: [
       { name: 'Design Thinking Cheat Sheet', description: 'Full reference for all DT stages, tools, and prompts.', link: '#', comingSoon: true },
       { name: 'The Design Thinking Playbook', description: 'Lewrick, Link & Leifer — the foundational text.', link: 'https://www.goodreads.com/book/show/35658438-the-design-thinking-playbook' },
-      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242' },
+      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242', hidden: true },
     ],
     exercises: [
       {
@@ -164,9 +164,9 @@ Return as a ranked action list with rationale for each item.`,
   {
     id: 1,
     slug: 'how-ai-can-help',
-    title: 'How AI Can Help',
+    title: 'AI + Design Thinking',
     tagline: 'AI doesn\'t just speed things up. It gives your team the ability to achieve things you previously couldn\'t.',
-    meta: '01 · How AI Can Help',
+    meta: '01 · AI + Design Thinking',
     heroImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80',
     readSections: [
       {
@@ -276,7 +276,7 @@ Return as a ranked action list with rationale for each item.`,
       },
     ],
     resources: [
-      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference document.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242' },
+      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference document.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242', hidden: true },
       { name: 'MIT AI Maturity Model', description: 'MIT CISR Enterprise AI Maturity Model (2024).', link: 'https://cisr.mit.edu/publication/2023_1201_GenAIMaturity_LaFountainWixom' },
       { name: 'Context Engineering Hands-on Guide', description: 'Structured template for building AI context across different task types.', link: 'https://stampedeteam.notion.site/aidt-handson-content-engineering' },
     ],
@@ -284,7 +284,7 @@ Return as a ranked action list with rationale for each item.`,
       {
         id: 1,
         title: 'Context Engineering Prompt Builder',
-        sectionLabel: 'How AI Can Help · Activity 1',
+        sectionLabel: 'AI + Design Thinking · Activity 1',
         prompt: `I want to write a well-structured AI prompt for this task:
 
 [DESCRIBE YOUR TASK IN 1-2 SENTENCES]
@@ -317,7 +317,7 @@ Review each section I've filled in.
       {
         id: 2,
         title: 'AI Maturity Assessment Prompt',
-        sectionLabel: 'How AI Can Help · Activity 2',
+        sectionLabel: 'AI + Design Thinking · Activity 2',
         prompt: `You are an AI strategy consultant.
 
 Here is an honest description of how my team currently uses AI:
@@ -446,7 +446,7 @@ Be direct. We can handle the truth.`,
       { name: 'Synthetic User Framework', description: 'Step-by-step process for creating research-backed synthetic users.', link: 'https://stampedeteam.notion.site/aidt-handson-synthetic-user' },
       { name: 'Agentic Prompt for GA4', description: 'Directing AI agent to analyse Google Analytics data and surface actionable insights.', link: 'https://stampedeteam.notion.site/aidt-handson-agent-atlas' },
       { name: 'Sample Dataset — Landscape Analysis', description: 'The EV charging sample dataset. Practice before applying to your own problem space.', link: '#', comingSoon: true },
-      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference. Your master reference for this entire course.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242' },
+      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference. Your master reference for this entire course.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242', hidden: true },
     ],
     exercises: [
       {
@@ -698,7 +698,7 @@ Rules:
       { name: 'Accelerated Journey Map', description: 'Directing AI to synthesise research into structured journey maps, fast.', link: 'https://stampedeteam.notion.site/aidt-handson-journey-map' },
       { name: 'Design Thinking Cheat Sheet', description: 'Full Define stage tools and prompt templates.', link: '#', comingSoon: true },
       { name: 'POV Statement Examples', description: 'Good and bad examples of POV statements with analysis.', link: '#', comingSoon: true },
-      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242' },
+      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242', hidden: true },
     ],
     exercises: [
       {
@@ -912,7 +912,7 @@ Rules:
       { name: 'Lovable.dev', description: 'Vibe coding tool — build web apps from prompts.', link: 'https://lovable.dev' },
       { name: 'v0 by Vercel', description: 'Generate UI components from prompts.', link: 'https://v0.dev' },
       { name: 'Figma Make', description: 'AI-assisted prototyping inside Figma.', link: 'https://www.figma.com/make' },
-      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242' },
+      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242', hidden: true },
     ],
     exercises: [
       {
@@ -1133,7 +1133,7 @@ Do not add features not listed above.`,
       { name: 'Synthetic Testing Hands-on Guide', description: 'Structured approach to usability and desirability testing using AI synthetic user.', link: 'https://stampedeteam.notion.site/aidt-handson-synthetic-testing' },
       { name: 'Sample Prompt 1 (Toro Keeper / Azim)', description: 'Complete synthetic UT brief for event timekeeper.', link: '#', comingSoon: true },
       { name: 'Sample Prompt 2 (Dr Aida)', description: 'Complete synthetic UT brief for healthcare prototype.', link: '#', comingSoon: true },
-      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242' },
+      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242', hidden: true },
     ],
     exercises: [
       {
@@ -1255,9 +1255,9 @@ Return as a structured list sorted by severity. No paragraph summaries.`,
   {
     id: 6,
     slug: 'application',
-    title: 'Application',
+    title: 'Go Agentic',
     tagline: 'This is where you stop learning and start building. Apply AI to your actual workflow — not a training exercise.',
-    meta: '06 · Application',
+    meta: '06 · Go Agentic',
     heroImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
     readSections: [
       {
@@ -1355,7 +1355,7 @@ Return as a structured list sorted by severity. No paragraph summaries.`,
       },
     ],
     resources: [
-      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242' },
+      { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242', hidden: true },
       { name: 'Zapier', description: 'Simple agentic automation, 8,000+ integrations.', link: 'https://zapier.com' },
       { name: 'Make', description: 'Visual workflow automation for complex multi-step flows.', link: 'https://www.make.com' },
       { name: 'n8n', description: 'Open-source automation for technical teams.', link: 'https://n8n.io' },
@@ -1367,7 +1367,7 @@ Return as a structured list sorted by severity. No paragraph summaries.`,
       {
         id: 1,
         title: 'Workflow Audit Prompt',
-        sectionLabel: 'Application · Activity 1',
+        sectionLabel: 'Go Agentic · Activity 1',
         prompt: `You are an AI integration strategist.
 
 Here is a description of my current design/product workflow:
@@ -1398,7 +1398,7 @@ Return as a structured plan with rationale.`,
       {
         id: 2,
         title: 'Workflow Design Prompt',
-        sectionLabel: 'Application · Activity 2',
+        sectionLabel: 'Go Agentic · Activity 2',
         prompt: `You are a workflow automation specialist.
 
 I want to automate this repeatable task:
@@ -1428,7 +1428,7 @@ Include a rough estimate of setup time.`,
       {
         id: 3,
         title: 'Agentic UI Brief Generator',
-        sectionLabel: 'Application · Activity 2',
+        sectionLabel: 'Go Agentic · Activity 2',
         prompt: `You are a product designer preparing an Agentic UI brief for Claude.
 
 PRODUCT CONTEXT:
@@ -1459,7 +1459,7 @@ Return as a structured brief that can be handed directly to an AI coding agent.`
       {
         id: 4,
         title: 'Personal AI Playbook Template',
-        sectionLabel: 'Application · Activity 3',
+        sectionLabel: 'Go Agentic · Activity 3',
         prompt: `Use this as a living document. Update after every project.
 
 ═══════════════════════════════════════════════════

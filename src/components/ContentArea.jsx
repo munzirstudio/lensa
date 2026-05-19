@@ -168,7 +168,7 @@ const ContentArea = forwardRef(function ContentArea({ chapter, activeExercise, o
         )}
 
         {/* ── RESOURCES ── */}
-        {chapter.resources.length > 0 && (
+        {chapter.resources.filter(r => !r.hidden).length > 0 && (
           <>
             <div className="sec-label" style={{ paddingTop: 48 }}>
               <IconResources />
@@ -176,7 +176,7 @@ const ContentArea = forwardRef(function ContentArea({ chapter, activeExercise, o
             </div>
 
             <div className="resource-list" id="resources">
-              {chapter.resources.map((resource, i) => (
+              {chapter.resources.filter(r => !r.hidden).map((resource, i) => (
                 <div key={i} className="resource-card">
                   <div className="resource-name">{resource.name}</div>
                   <div className="resource-desc">{resource.description}</div>
