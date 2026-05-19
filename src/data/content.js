@@ -187,9 +187,9 @@ Return as a ranked action list with rationale for each item.`,
   {
     id: 1,
     slug: 'how-ai-can-help',
-    title: 'AI + Design Thinking',
+    title: 'Design Thinking + AI',
     tagline: 'AI doesn\'t just speed things up. It gives your team the ability to achieve things you previously couldn\'t.',
-    meta: '01 · AI + Design Thinking',
+    meta: '01 · Design Thinking + AI',
     heroImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80',
     readSections: [
       {
@@ -229,36 +229,27 @@ Return as a ranked action list with rationale for each item.`,
         id: 'context-engineering',
         heading: 'Context Engineering: The Foundational Skill',
         html: `<p>Context engineering does one thing very well: <strong>it prevents you from looping in refinement hell.</strong></p>
-<p>You set up AI chat once with proper context — the backstory, the goal, the constraints, your hunch — then you direct instead of endlessly refining.</p>
+<p>You set up AI chat once with proper context — the backstory, the goal, the constraints, your hunch — then you direct instead of endlessly refining. Transform AI from a tool into a thinking partner that amplifies your capability 10x.</p>
 <p>Three templates depending on your situation:</p>
 <p><strong>🚲 Lite</strong> — 2 minutes. Quick brainstorm, low stakes, internal drafts.</p>
 <p><strong>🏎 Pro</strong> — 10 minutes. Stakeholder-facing work, user research planning, important decisions.</p>
-<p><strong>🚀 Power Up</strong> — When you don't know what you don't know. Multiple unknowns. High stakes.</p>
-<p><em>Tip: Don't skip Perspective Framing. This is you wielding your good taste — what makes AI amplify <strong>you</strong> instead of giving you the generic output everyone else gets.</em></p>`,
-      },
-      {
-        id: 'what-ai-is-not',
-        heading: 'What AI in Design Thinking is NOT',
-        html: `<ul>
-<li><strong>Not a substitute for real users</strong> — Synthetic users validate methods; real users validate solutions.</li>
-<li><strong>Not autopilot for research</strong> — Strategic thinking, validation, and interpretation remain human work.</li>
-<li><strong>Not plug-and-play magic</strong> — Every insight must be traced to evidence and checked against reality.</li>
-<li><strong>Not a shortcut past rigour</strong> — Using AI means doing more rigorous work in less time.</li>
-</ul>`,
-      },
-      {
-        id: 'ai-double-diamond',
-        heading: 'How AI Maps to the Double Diamond',
-        html: `<table>
-<thead><tr><th>DT Stage</th><th>AI Amplification</th><th>What Changes</th></tr></thead>
+<p><strong>🚀 Power Up</strong> — When you don't know what you don't know. Multiple unknowns. High stakes. The UNKNOWN section alone is worth it.</p>
+<p><strong>The right context for the right situation:</strong></p>
+<table>
+<thead><tr><th>Your situation</th><th>Use this</th><th>Why</th></tr></thead>
 <tbody>
-<tr><td>Empathise</td><td>Landscape research, synthetic user, synthesis</td><td>Weeks → hours</td></tr>
-<tr><td>Define</td><td>Pattern recognition, journey map acceleration, POV generation</td><td>Scattered notes → structured insight</td></tr>
-<tr><td>Ideate</td><td>Inspiration directing, HMW generation, idea divergence</td><td>10 ideas → 100, filtered to the best 10</td></tr>
-<tr><td>Prototype</td><td>Storyboard generation, copy writing, vibe coding</td><td>Sketch → interactive prototype faster</td></tr>
-<tr><td>Test</td><td>Synthetic pilot testing, session synthesis, iteration</td><td>2 tests/day → unlimited coverage</td></tr>
+<tr><td>Quick brainstorm, low stakes</td><td>🚲 Lite</td><td>2 minutes. Good enough is good enough.</td></tr>
+<tr><td>Internal draft for your team</td><td>🚲 Lite</td><td>Unless there are constraints they need to know.</td></tr>
+<tr><td>Presenting to stakeholders</td><td>🏎 Pro</td><td>They'll have questions. You need proper context.</td></tr>
+<tr><td>User research planning</td><td>🏎 Pro</td><td>Audience + constraints + your hunches matter.</td></tr>
+<tr><td>Design decision with trade-offs</td><td>🏎 Pro</td><td>AI needs to understand what you're optimising for.</td></tr>
+<tr><td>Multiple unknowns could derail you</td><td>🚀 Power Up</td><td>The UNKNOWN section alone is worth it.</td></tr>
+<tr><td>Cross-team work (design + dev + business)</td><td>🚀 Power Up</td><td>Different perspectives need explicit context.</td></tr>
+<tr><td>High-stakes decision (budget, reputation)</td><td>🚀 Power Up</td><td>10 minutes now saves weeks of rework.</td></tr>
+<tr><td>It's 4pm on Friday and your brain is mush</td><td>🚲 Lite</td><td>Be kind to yourself. Go Pro on Monday.</td></tr>
 </tbody>
-</table>`,
+</table>
+<p><em><strong>Tip:</strong> Don't skip Perspective Framing. This is you wielding your good taste — what makes AI amplify <strong>you</strong> instead of giving everyone the same generic output.</em></p>`,
       },
     ],
     activities: [
@@ -267,16 +258,17 @@ Return as a ranked action list with rationale for each item.`,
         anchor: 'activity-1',
         tocTitle: 'Your First Context-Engineered Prompt',
         title: 'Activity 1 · Your First Context-Engineered Prompt',
-        what: 'Write a properly structured prompt using the Stampede framework. Compare it to a one-liner on the same task.',
+        what: 'Write a properly structured prompt using the framework. Try all three levels and compare the outputs.',
         why: 'Most people write weak prompts and blame AI for weak outputs. Context Engineering is the single highest-leverage skill in this course. Master it here and everything else gets easier.',
         howAiHelps: null,
         steps: [
           'Pick a real task from your current work',
-          'First, run it as a one-liner',
-          'Then use the Pro template below',
-          'Compare outputs side by side',
+          'First, run it as a one-liner — note the output quality',
+          'Run it with 🚲 Lite — is it better?',
+          'If the output makes you go "hmm, not quite" — that\'s your signal to go Pro or Power Up',
+          'Compare all outputs side by side',
         ],
-        exerciseIds: [1, 2],
+        exerciseIds: [1, 2, 3],
       },
       {
         id: 2,
@@ -287,22 +279,22 @@ Return as a ranked action list with rationale for each item.`,
         why: 'You can\'t plan where to go if you don\'t know where you are. Most teams overestimate their maturity.',
         howAiHelps: null,
         steps: [
-          'Read the 4 levels again with your team and vote',
-          'Describe your current usage honestly in the prompt below',
-          'Get a specific action plan for moving to the next level',
+          'Read the 4 levels with your team and vote honestly',
+          'Describe your current usage in the prompt below',
+          'Get a specific action plan — not a pep talk',
         ],
-        exerciseIds: [3],
+        exerciseIds: [4],
       },
     ],
     resources: [
-      { name: 'Hands-on: Context Engineering', description: 'Full Stampede prompt guide — Lite, Pro, and Power Up.', link: 'https://stampedeteam.notion.site/aidt-handson-content-engineering' },
+      { name: 'Hands-on: Context Engineering', description: 'Full prompt guide — Lite, Pro, and Power Up.', link: 'https://stampedeteam.notion.site/aidt-handson-content-engineering' },
       { name: 'Cohort V Resource Hub', description: 'Full AI-Supercharged Design Thinking reference document.', link: 'https://stampedeteam.notion.site/Cohort-V-Resource-Hub-AI-Supercharged-Design-Thinking-348ed70298ae80c4803fd53003f56242', hidden: true },
     ],
     exercises: [
       {
         id: 1,
         title: '🚲 Lite Context Engineering',
-        sectionLabel: 'AI + Design Thinking · Activity 1',
+        sectionLabel: 'Design Thinking + AI · Activity 1',
         prompt: `📍 BACKGROUND & CONTEXT
 [What's the situation? What's been tried? Why now?]
 
@@ -337,7 +329,7 @@ people operations for Malaysian SME HR managers.`,
       {
         id: 2,
         title: '🏎 Pro Context Engineering',
-        sectionLabel: 'AI + Design Thinking · Activity 1',
+        sectionLabel: 'Design Thinking + AI · Activity 1',
         prompt: `📍 BACKGROUND & CONTEXT
 [Concise, rich background. Current challenges, past failures, timing urgency.]
 
@@ -382,8 +374,107 @@ recruit, and 5 interview questions to start with.`,
       },
       {
         id: 3,
+        title: '🚀 Power Up Context Engineering',
+        sectionLabel: 'Design Thinking + AI · Activity 1',
+        prompt: `📍 BACKGROUND & CONTEXT
+[Concise, rich background for situational awareness.
+Current challenges, past failures, timing urgency.]
+
+🎯 USER CONTEXT
+[Who is the user? What do we know / what's been validated about them?]
+
+📊 STRUCTURED DATA (if applicable)
+[Paste data from Excel/Sheets for pattern analysis.
+Quantitative analytics, error logs, feedback data.]
+
+🚧 KNOWN CONSTRAINTS
+[What limits exist? Timeline, budget, expertise, technical, regulatory?]
+
+💛 PERSPECTIVE FRAMING
+[What to emphasise or avoid? Success criteria, risk tolerance, your hunches.]
+
+🔍 UNKNOWN
+[Flag what you DON'T know yet.
+e.g. "UNKNOWN: whether users would pay for this"
+     "UNKNOWN: if our infrastructure can handle the load"
+     "UNKNOWN: whether this pain point is universal or segment-specific"]
+
+--- POWER-UPS (optional) ---
+
+👥 INTENDED AUDIENCE
+[Who this output is for. Technical level? What action do we want them to take?]
+
+🔄 WORKING STYLE
+[How you want to collaborate:
+"Challenge my assumptions first"
+"Give me 3 options, I'll pick one"
+"Build incrementally — show me your reasoning"]
+
+→ WHAT I NEED HELP WITH
+[Your specific request]`,
+        sample: `📍 BACKGROUND & CONTEXT
+Weeknight dinners for working parents in KL (both working, 1–2 kids
+under 12). Three meal planning apps failed here 2022–2024 — suspect
+they just copied Western models. Malaysian context is different:
+GrabFood everywhere, eating out 3–4x/week is normal, ~40% of M40
+families have helpers or live with extended family. Need to understand
+what's actually going on vs my assumptions.
+
+🎯 USER CONTEXT
+Working parents, both employed, household income RM8–15k. Time-poor.
+Food decisions are emotional, not rational — tied to family guilt,
+convenience, and "what everyone will actually eat." Past research kept
+getting surface answers ("we want to eat healthier") that didn't
+explain actual behaviour.
+
+📊 STRUCTURED DATA (if applicable)
+N/A for this phase — qualitative discovery first.
+
+🚧 KNOWN CONSTRAINTS
+Research budget: RM15k. 3 weeks to insights. Must cover both B40 and
+M40 segments. Should include families with and without domestic help.
+
+💛 PERSPECTIVE FRAMING
+What I think good looks like:
+1. Understanding the switching costs between cooking/ordering/eating
+   out on a Tuesday vs a Friday.
+2. I care about time/energy/mental load trade-offs more than
+   nutritional goals.
+3. My hunch: the decision isn't about "healthy" — it's about the
+   least exhausting option that keeps everyone happy.
+4. Risk tolerance: willing to narrow scope to get deep insights vs
+   broad but shallow.
+
+🔍 UNKNOWN
+UNKNOWN: whether the pain is primarily the mother's or shared equally
+UNKNOWN: whether domestic helpers change the decision dynamic
+  completely or just shift it
+UNKNOWN: if "weeknight" is the right framing — might be week-by-week
+  mental load, not day-by-day
+UNKNOWN: whether mamak/hawker proximity is a variable or a constant
+
+--- POWER-UPS ---
+
+👥 INTENDED AUDIENCE
+This is for me and my co-founder to align on research scope before
+we spend the budget. We need to agree on who we're talking to and why.
+
+🔄 WORKING STYLE
+Challenge my assumptions first. Then give me 3 research directions —
+I'll pick one. Show your reasoning.
+
+→ WHAT I NEED HELP WITH
+Help me identify 3–4 distinct user segments based on how they handle
+weeknight dinners — what drives their decisions, what makes it hard,
+what they're already doing to cope. Then suggest research questions
+that would get past "oh we just need to cook healthier" to the real
+friction points. Especially the Malaysian-specific stuff that imported
+solutions miss.`,
+      },
+      {
+        id: 4,
         title: 'AI Maturity Assessment Prompt',
-        sectionLabel: 'AI + Design Thinking · Activity 2',
+        sectionLabel: 'Design Thinking + AI · Activity 2',
         prompt: `You are an AI strategy consultant.
 
 Here is an honest description of how my team currently uses AI:
@@ -1144,15 +1235,17 @@ Then:
       {
         id: 3,
         anchor: 'activity-3',
-        tocTitle: 'Build a Vibe-Coded Prototype',
-        title: 'Activity 3 · Build a Vibe-Coded Prototype',
-        what: 'Use Lovable, v0, or Cursor to build an interactive prototype from your storyboard — fast.',
-        why: 'A click-through tests navigation. A vibe-coded prototype tests feel. Some assumptions can only be validated once someone can actually interact with it.',
+        tocTitle: 'Generate Your Prototype Prompt with AI',
+        title: 'Activity 3 · Generate Your Prototype Prompt with AI',
+        what: 'Give Claude your storyboard and synthetic user profile. AI deconstructs them and generates a precise, ready-to-paste brief for Lovable, v0, or Figma Make. You don\'t write the tool prompt — Claude does, from your intent.',
+        why: 'The problem with vibe coding is it jumps to screen generation without first mapping user intent. Storyboard first → AI reads the story → AI generates the tool prompt → you paste and build. Slower to start, far fewer iterations.',
         howAiHelps: null,
         steps: [
-          'Identify the 2–3 most important scenes from your storyboard to prototype',
-          'Use the vibe coding prompt to brief the tool',
-          'Before showing anyone: write down the 2 assumptions this prototype is testing',
+          'Have your completed storyboard (from Activity 2) and synthetic user profile ready',
+          'Run the prompt generator — paste both into Claude',
+          'Claude outputs a tool-ready brief structured around screens, user intent, and content',
+          'Copy the generated brief → paste directly into Lovable, v0, or Figma Make',
+          'Before running: write down the 2 assumptions this prototype is testing',
         ],
         exerciseIds: [3],
       },
@@ -1287,52 +1380,127 @@ After the storyboard:
       },
       {
         id: 3,
-        title: 'Vibe Coding Prompt',
+        title: 'Prototype Prompt Generator',
         sectionLabel: 'Ideate & Prototype · Activity 3',
-        prompt: `Build a [web app / component / feature] that [core function in one sentence].
+        prompt: `The above is my storyboard and details of my synthetic user.
+Deconstruct it into a prompt for me to build a prototype in
+Figma Make / Lovable / v0.
 
-Target user: [brief user description]
+My storyboard:
+[PASTE YOUR STORYBOARD SCENES HERE — each scene with: what the user
+is doing, what they see, what they're thinking/feeling, any friction]
 
-Core user flow:
-1. [First action user takes]
-2. [What happens next]
-3. [Outcome user reaches]
+My synthetic user:
+[PASTE YOUR SYNTHETIC USER PROFILE — key layers: who they are,
+how they work, motivations, pain points, friction layer]
 
-Design direction:
-- Visual style: [minimal / warm / professional / modern]
-- Key interaction: [what should feel smooth or satisfying]
-- Must have: [the one thing that cannot be missing]
-- Must not have: [what to avoid — features not in scope]
+Generate a prototype brief I can paste directly into a vibe coding tool.
+The brief must include:
 
-Build the simplest version that makes this flow work end-to-end.
-Prioritise the core interaction over completeness.
-Do not add features not listed above.`,
-        sample: `Build a mobile web app that shows a physician their top 3 priority
-patients for the current shift, with a one-tap drill-down into why
-each is flagged.
+1. ONE-LINE PRODUCT DESCRIPTION
+   What this is in plain language — not technical, not marketing.
 
-Target user: Consultant physician in a busy private hospital — checking
-patient status between clinic sessions on their phone.
+2. TARGET USER SNAPSHOT
+   3–5 bullet points: who they are, context of use, what they're
+   trying to do, what would make them abandon it.
 
-Core user flow:
-1. Physician opens the app during a 5-minute gap between patients
-2. Sees a ranked list of 3 patients with a short urgency summary each
-3. Taps one patient to see the trend data and the specific flag reason
-4. Can dismiss or escalate from that screen — no other actions needed
+3. SCREENS TO BUILD
+   List each screen from the storyboard. For each:
+   - Screen name
+   - User's intent at this moment (why are they here?)
+   - Key information that must be visible
+   - Primary action available
+   - What must NOT be on this screen (scope guard)
 
-Design direction:
-- Visual style: Clean, clinical, high contrast — must be legible in
-  bright clinic lighting
-- Key interaction: The urgency summary must be scannable in 3 seconds
-  without reading — use visual hierarchy, not just text
-- Must have: Clear "why is this flagged" explanation per patient.
-  Without this, physicians won't trust the list.
-- Must not have: Notification settings, admin panels, patient history
-  deeper than 24 hours, any data entry
+4. INTERACTION PRINCIPLES
+   3–4 rules that govern how this prototype should feel and behave.
+   Derived from the user's cognitive and friction layers.
 
-Build the simplest version that makes this flow work end-to-end.
-Prioritise the core interaction over completeness.
-Do not add features not listed above.`,
+5. CONTENT NOTES
+   Real placeholder copy — not lorem ipsum. Use language this specific
+   user would actually recognise and trust.
+
+6. BUILD INSTRUCTION
+   One paragraph telling the tool exactly what to prioritise and what
+   to leave out. End with: "Build the simplest version that makes the
+   core flow work. Do not add features not listed above."`,
+        sample: `The above is my storyboard and details of my synthetic user.
+Deconstruct it into a prompt for me to build a prototype in
+Figma Make / Lovable / v0.
+
+My storyboard:
+
+Scene 1 — "Gap between patients"
+Dr Dayana has 5 minutes before her next patient. She opens the app
+on her phone. She's thinking: "Is there anyone I need to deal with
+right now?" She wants to scan fast — no reading, no tapping through
+menus. Friction: if it takes more than 10 seconds to get an answer,
+she closes the app.
+
+Scene 2 — "The list"
+She sees 3 patient cards ranked by urgency. Each card shows patient
+code, one urgency line, and a colour-coded severity indicator.
+She's thinking: "Why is this one flagged?" She scans the urgency line.
+If it makes sense, she trusts it. If it's vague, she dismisses it and
+loses a bit of trust in the system.
+
+Scene 3 — "Drill down"
+She taps Patient 1. She sees a trend chart (last 4 hours), the
+specific vital that triggered the flag, and who last updated the
+record. She's thinking: "Is this sustained or a spike?" She wants
+to see the trend — not just the current value.
+Friction: if the chart requires interpretation, she won't act.
+
+Scene 4 — "Decision"
+Two actions: Dismiss (with a note reason) or Escalate (routes to
+the ward nurse automatically). She escalates. Gets a confirmation.
+She's relieved — the right person is now aware.
+Thinking: "Good. Now I can focus on my next patient."
+
+Scene 5 — "Back to clinic"
+She returns to the list. The escalated patient is now greyed out
+with a "Nurse notified" label. She can see at a glance that nothing
+else needs her right now. She closes the app.
+
+My synthetic user:
+Dr Dayana, Senior Consultant Physician, private hospital in KL.
+In back-to-back clinic sessions most of the day. Uses EMR desktop
+and WhatsApp. Skeptical of AI after false-alert experiences.
+Wants trend + context before acting. Will permanently disable
+notifications if flagged incorrectly even once. Cannot tolerate
+more than a few taps during clinic. Needs to know who authored
+the flag — AI or human. Sensitive to accountability.
+
+Generate a prototype brief I can paste directly into a vibe coding tool.
+The brief must include:
+
+1. ONE-LINE PRODUCT DESCRIPTION
+   What this is in plain language — not technical, not marketing.
+
+2. TARGET USER SNAPSHOT
+   3–5 bullet points: who they are, context of use, what they're
+   trying to do, what would make them abandon it.
+
+3. SCREENS TO BUILD
+   List each screen from the storyboard. For each:
+   - Screen name
+   - User's intent at this moment (why are they here?)
+   - Key information that must be visible
+   - Primary action available
+   - What must NOT be on this screen (scope guard)
+
+4. INTERACTION PRINCIPLES
+   3–4 rules that govern how this prototype should feel and behave.
+   Derived from the user's cognitive and friction layers.
+
+5. CONTENT NOTES
+   Real placeholder copy — not lorem ipsum. Use language this specific
+   user would actually recognise and trust.
+
+6. BUILD INSTRUCTION
+   One paragraph telling the tool exactly what to prioritise and what
+   to leave out. End with: "Build the simplest version that makes the
+   core flow work. Do not add features not listed above."`,
       },
     ],
   },
@@ -1705,9 +1873,9 @@ Return as a structured list sorted by severity. No paragraph summaries.`,
   {
     id: 6,
     slug: 'application',
-    title: 'Application',
+    title: 'Go Agentic',
     tagline: 'This is where you stop learning and start building. Apply AI to your actual workflow — not a training exercise.',
-    meta: '06 · Application',
+    meta: '06 · Go Agentic',
     heroImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
     readSections: [
       {
@@ -1818,7 +1986,7 @@ Return as a structured list sorted by severity. No paragraph summaries.`,
       {
         id: 1,
         title: 'Agentic Prompt for GA4',
-        sectionLabel: 'Application · Activity 1',
+        sectionLabel: 'Go Agentic · Activity 1',
         prompt: `Our business goal this year is to [state your business goal].
 
 We need a clear, data-backed understanding of how people are finding us,
@@ -1883,7 +2051,7 @@ Snapshots or URLs of key dashboards you referenced`,
       {
         id: 2,
         title: 'Workflow Audit Prompt',
-        sectionLabel: 'Application · Activity 2',
+        sectionLabel: 'Go Agentic · Activity 2',
         prompt: `You are an AI integration strategist.
 
 Here is a description of my current design/product workflow:
@@ -1944,7 +2112,7 @@ Analyse this and identify:
       {
         id: 3,
         title: 'Personal AI Playbook Template',
-        sectionLabel: 'Application · Activity 3',
+        sectionLabel: 'Go Agentic · Activity 3',
         prompt: `═══════════════════════════════════════════════════════
 MY AI-SUPERCHARGED DESIGN THINKING PLAYBOOK
 Name:
@@ -2011,7 +2179,7 @@ THE ONE THING I'M DOING DIFFERENTLY ON MY NEXT PROJECT
 MY AI-SUPERCHARGED DESIGN THINKING PLAYBOOK
 Name: Amirah Hassan
 Date: May 2025
-Team: Product Design, Stampede Digital
+Team: Product Design
 ═══════════════════════════════════════════════════════
 
 EMPATHISE
