@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import mixpanel from '../lib/mixpanel'
 
 export default function RightSidebar({ open, exercise, view = 'prompt' }) {
   const [copied, setCopied] = useState(false)
@@ -12,6 +13,11 @@ export default function RightSidebar({ open, exercise, view = 'prompt' }) {
   function handleCopy() {
     if (!content) return
     navigator.clipboard.writeText(content).then(() => {
+      mixpanel.track('Prompt Copied', {
+        exercise_title: exercise?.title,
+        section_label: exercise?.sectionLabel,
+        view,
+      })
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     })

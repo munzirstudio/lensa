@@ -4,6 +4,7 @@ import TopBar from './components/TopBar'
 import LeftSidebar from './components/LeftSidebar'
 import ContentArea from './components/ContentArea'
 import RightSidebar from './components/RightSidebar'
+import mixpanel from './lib/mixpanel'
 
 export default function App() {
   const [activeChapterId, setActiveChapterId] = useState(0)
@@ -63,6 +64,15 @@ export default function App() {
       setActiveExercise(null)
       return
     }
+    const chapter = CHAPTERS.find(c => c.id === chapterId)
+    const exercise = chapter?.exercises.find(e => e.id === exerciseId)
+    mixpanel.track('Prompt Opened', {
+      chapter_id: chapterId,
+      chapter_title: chapter?.title,
+      exercise_id: exerciseId,
+      exercise_title: exercise?.title,
+      view,
+    })
     setActiveExercise({ chapterId, exerciseId, view })
     setRightSidebarOpen(true)
   }
@@ -75,6 +85,11 @@ export default function App() {
   }
 
   function handleChapterClick(chapterId) {
+    const chapter = CHAPTERS.find(c => c.id === chapterId)
+    mixpanel.track('Chapter Viewed', {
+      chapter_id: chapterId,
+      chapter_title: chapter?.title,
+    })
     setActiveChapterId(chapterId)
     setActiveExercise(null)
     setRightSidebarOpen(false)
@@ -84,6 +99,12 @@ export default function App() {
   }
 
   function handleNavigateToActivity(chapterId, exerciseId) {
+    const chapter = CHAPTERS.find(c => c.id === chapterId)
+    mixpanel.track('View Activity Clicked', {
+      to_chapter_id: chapterId,
+      to_chapter_title: chapter?.title,
+      exercise_id: exerciseId,
+    })
     setActiveChapterId(chapterId)
     setActiveExercise(null)
     setRightSidebarOpen(false)
