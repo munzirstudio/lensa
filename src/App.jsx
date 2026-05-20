@@ -6,8 +6,21 @@ import ContentArea from './components/ContentArea'
 import RightSidebar from './components/RightSidebar'
 import mixpanel from './lib/mixpanel'
 
+function getChapterFromHash() {
+  const match = window.location.hash.match(/^#chapter\/(\d+)$/)
+  if (match) {
+    const id = parseInt(match[1], 10)
+    if (CHAPTERS.some(c => c.id === id)) return id
+  }
+  return 0
+}
+
+function pushChapterHash(chapterId) {
+  history.pushState(null, '', `#chapter/${chapterId}`)
+}
+
 export default function App() {
-  const [activeChapterId, setActiveChapterId] = useState(0)
+  const [activeChapterId, setActiveChapterId] = useState(getChapterFromHash)
   const [activeExercise, setActiveExercise] = useState(null)
   const [rightSidebarOpen, setRightSidebarOpen] = useState(false)
   const [activeSectionId, setActiveSectionId] = useState(null)
@@ -15,6 +28,27 @@ export default function App() {
   const mainRef = useRef(null)
 
   const activeChapter = CHAPTERS.find(c => c.id === activeChapterId)
+
+  // Set initial hash if missing
+  useEffect(() => {
+    if (!window.location.hash.startsWith('#chapter/')) {
+      history.replaceState(null, '', `#chapter/${activeChapterId}`)
+    }
+  }, [])
+
+  // Browser back/forward
+  useEffect(() => {
+    function onPopState() {
+      const chapterId = getChapterFromHash()
+      setActiveChapterId(chapterId)
+      setActiveExercise(null)
+      setRightSidebarOpen(false)
+      setMobileDrawerOpen(false)
+      if (mainRef.current) mainRef.current.scrollTop = 0
+    }
+    window.addEventListener('popstate', onPopState)
+    return () => window.removeEventListener('popstate', onPopState)
+  }, [])
 
   // Scroll-based TOC highlighting
   useEffect(() => {
@@ -82,7 +116,7 @@ export default function App() {
     if (!activeExercise) return null
     const chapter = CHAPTERS.find(c => c.id === activeExercise.chapterId)
     const exercise = chapter?.exercises.find(e => e.id === activeExercise.exerciseId) ?? null
-    return { exercise, view: activeExercise.view ?? 'prompt' }
+    return { exercise, view: activeExercise.view ?? 'template' }
   }
 
   function handleChapterClick(chapterId, source = 'sidebar') {
@@ -92,6 +126,7 @@ export default function App() {
       chapter_title: chapter?.title,
       source,
     })
+    pushChapterHash(chapterId)
     setActiveChapterId(chapterId)
     setActiveExercise(null)
     setRightSidebarOpen(false)
@@ -108,6 +143,7 @@ export default function App() {
       to_chapter_title: chapter?.title,
       exercise_id: exerciseId,
     })
+    pushChapterHash(chapterId)
     setActiveChapterId(chapterId)
     setActiveExercise(null)
     setRightSidebarOpen(false)
@@ -181,6 +217,7 @@ export default function App() {
               to_chapter_title: chapter?.title,
               exercise_id: targetExerciseId,
             })
+            pushChapterHash(targetChapterId)
             setActiveChapterId(targetChapterId)
             if (mainRef.current) mainRef.current.scrollTop = 0
             setTimeout(() => {
