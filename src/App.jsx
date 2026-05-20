@@ -6,25 +6,30 @@ import ContentArea from './components/ContentArea'
 import RightSidebar from './components/RightSidebar'
 import mixpanel from './lib/mixpanel'
 
-function getChapterFromHash() {
-  const match = window.location.hash.match(/^#chapter\/(\d+)$/)
+function parseHash() {
+  const match = window.location.hash.match(/^#chapter\/(\d+)(?:\/section\/(.+))?$/)
   if (match) {
     const id = parseInt(match[1], 10)
-    if (CHAPTERS.some(c => c.id === id)) return id
+    if (CHAPTERS.some(c => c.id === id)) return { chapterId: id, sectionId: match[2] ?? null }
   }
-  return 0
+  return { chapterId: 0, sectionId: null }
 }
 
 function pushChapterHash(chapterId) {
   history.pushState(null, '', `#chapter/${chapterId}`)
 }
 
+function pushSectionHash(chapterId, sectionId) {
+  history.pushState(null, '', `#chapter/${chapterId}/section/${sectionId}`)
+}
+
 export default function App() {
-  const [activeChapterId, setActiveChapterId] = useState(getChapterFromHash)
+  const [activeChapterId, setActiveChapterId] = useState(() => parseHash().chapterId)
   const [activeExercise, setActiveExercise] = useState(null)
   const [rightSidebarOpen, setRightSidebarOpen] = useState(false)
   const [activeSectionId, setActiveSectionId] = useState(null)
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false)
+  const [pendingSection, setPendingSection] = useState(() => parseHash().sectionId)
   const mainRef = useRef(null)
 
   const activeChapter = CHAPTERS.find(c => c.id === activeChapterId)
@@ -36,15 +41,27 @@ export default function App() {
     }
   }, [])
 
+  // Scroll to pending section after chapter renders
+  useEffect(() => {
+    if (!pendingSection) return
+    const timer = setTimeout(() => {
+      const el = mainRef.current?.querySelector(`#${pendingSection}`)
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      setPendingSection(null)
+    }, 100)
+    return () => clearTimeout(timer)
+  }, [pendingSection, activeChapterId])
+
   // Browser back/forward
   useEffect(() => {
     function onPopState() {
-      const chapterId = getChapterFromHash()
+      const { chapterId, sectionId } = parseHash()
       setActiveChapterId(chapterId)
       setActiveExercise(null)
       setRightSidebarOpen(false)
       setMobileDrawerOpen(false)
       if (mainRef.current) mainRef.current.scrollTop = 0
+      if (sectionId) setPendingSection(sectionId)
     }
     window.addEventListener('popstate', onPopState)
     return () => window.removeEventListener('popstate', onPopState)
@@ -167,6 +184,7 @@ export default function App() {
       chapter_id: activeChapterId,
       chapter_title: chapter?.title,
     })
+    pushSectionHash(activeChapterId, sectionId)
     if (!mainRef.current) return
     const el = mainRef.current.querySelector(`#${sectionId}`)
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
