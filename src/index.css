@@ -400,3 +400,198 @@ html, body, #root {
 }
 
 .icon { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+/* ── Library ─────────────────────────────────────────────────────── */
+.content-wrap--wide { max-width: 680px; }
+
+.lib-index {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin: 0 0 56px;
+}
+
+.lib-index-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px 16px;
+  background: var(--bg-sidebar);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: border-color 0.15s;
+}
+.lib-index-item:hover { border-color: #b0afa9; }
+
+.lib-index-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 20px;
+}
+.lib-index-count {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 18px;
+}
+
+.lib-section { margin-bottom: 56px; }
+
+.lib-section-header { margin-bottom: 4px; }
+.lib-section-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 20px;
+  margin-bottom: 16px;
+}
+
+.lib-card {
+  background: var(--bg-sidebar);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lib-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lib-card-tag {
+  font-size: 11px;
+  line-height: 16px;
+  color: var(--text-secondary);
+  background: var(--bg-page);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1px 7px;
+}
+.lib-card-id {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+}
+.lib-card-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 22px;
+}
+.lib-card-when {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 18px;
+}
+
+.lib-card-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.lib-toggle {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.lib-toggle-btn {
+  padding: 5px 13px;
+  font-size: 13px;
+  font-family: var(--font-sans);
+  line-height: 20px;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.lib-toggle-btn + .lib-toggle-btn { border-left: 1px solid var(--border); }
+.lib-toggle-btn.active {
+  background: var(--btn-dark);
+  color: var(--btn-dark-text);
+}
+.lib-toggle-btn:not(.active):hover { background: var(--bg-page); }
+
+.lib-copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 32px;
+  padding: 0 13px;
+  border-radius: 999px;
+  border: none;
+  background: var(--btn-dark);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+.lib-copy-btn:hover { opacity: 0.85; }
+.lib-copy-btn.copied {
+  background: var(--bg-page);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  opacity: 1;
+}
+
+.lib-code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: var(--bg-page);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 14px 16px;
+}
+
+.lib-chapter-link {
+  font-size: 13px;
+  color: var(--accent);
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  text-align: left;
+  line-height: 20px;
+  transition: opacity 0.12s;
+}
+.lib-chapter-link:hover { opacity: 0.75; }
+
+/* ── Glossary ────────────────────────────────────────────────────── */
+.glossary-section { margin-bottom: 48px; }
+
+.glossary-list { display: flex; flex-direction: column; gap: 0; }
+
+.glossary-item {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.glossary-item:first-child { border-top: 1px solid var(--border); }
+
+.glossary-term {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 22px;
+  margin-bottom: 4px;
+}
+.glossary-def {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 23px;
+}

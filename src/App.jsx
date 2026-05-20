@@ -19,13 +19,21 @@ export default function App() {
     const container = mainRef.current
     if (!container || !activeChapter) return
 
-    setActiveSectionId(activeChapter.readSections[0]?.id ?? null)
-
-    const sectionIds = [
-      ...activeChapter.readSections.map(s => s.id),
-      ...activeChapter.activities.map(a => a.anchor),
-      ...(activeChapter.resources.length > 0 ? ['resources'] : []),
-    ]
+    let sectionIds = []
+    if (activeChapter.type === 'library') {
+      sectionIds = activeChapter.categories.map(c => c.id)
+      setActiveSectionId(sectionIds[0] ?? null)
+    } else if (activeChapter.type === 'glossary') {
+      sectionIds = activeChapter.sections.map(s => s.id)
+      setActiveSectionId(sectionIds[0] ?? null)
+    } else {
+      setActiveSectionId(activeChapter.readSections[0]?.id ?? null)
+      sectionIds = [
+        ...activeChapter.readSections.map(s => s.id),
+        ...activeChapter.activities.map(a => a.anchor),
+        ...(activeChapter.resources.length > 0 ? ['resources'] : []),
+      ]
+    }
 
     function handleScroll() {
       const containerTop = container.getBoundingClientRect().top
@@ -69,9 +77,27 @@ export default function App() {
   function handleChapterClick(chapterId) {
     setActiveChapterId(chapterId)
     setActiveExercise(null)
+    setRightSidebarOpen(false)
     if (mainRef.current) {
       mainRef.current.scrollTop = 0
     }
+  }
+
+  function handleNavigateToActivity(chapterId, exerciseId) {
+    setActiveChapterId(chapterId)
+    setActiveExercise(null)
+    setRightSidebarOpen(false)
+    if (mainRef.current) {
+      mainRef.current.scrollTop = 0
+    }
+    setTimeout(() => {
+      const chapter = CHAPTERS.find(c => c.id === chapterId)
+      const activity = chapter?.activities.find(a => a.exerciseIds.includes(exerciseId))
+      if (activity && mainRef.current) {
+        const el = mainRef.current.querySelector(`#${activity.anchor}`)
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 80)
   }
 
   function handleSectionClick(sectionId) {
@@ -101,9 +127,11 @@ export default function App() {
           activeExercise={activeExercise}
           onActivateExercise={activateExercise}
           onNextChapter={() => handleChapterClick(activeChapterId + 1)}
+          onNavigateToChapter={handleChapterClick}
+          onNavigateToActivity={handleNavigateToActivity}
         />
         <RightSidebar
-          open={rightSidebarOpen}
+          open={rightSidebarOpen && activeChapter?.type !== 'glossary'}
           exercise={getActiveExerciseData()?.exercise ?? null}
           view={getActiveExerciseData()?.view ?? 'prompt'}
         />

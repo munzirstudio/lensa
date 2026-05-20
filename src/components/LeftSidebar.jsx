@@ -33,45 +33,59 @@ export default function LeftSidebar({
             </div>
           </div>
 
-          {chapter.id === activeChapterId && activeChapter && (
+          {chapter.id === activeChapterId && activeChapter && activeChapter.type !== 'library' && (
             <div className="toc">
-              <div
-                className="toc-h toc-h-clickable"
-                onClick={() => onSectionClick(activeChapter.readSections[0]?.id)}
-              >Read</div>
-              {activeChapter.readSections.map(section => (
-                <div
-                  key={section.id}
-                  className={`toc-item${isReadSectionActive(section.id) ? ' active' : ''}`}
-                  onClick={() => onSectionClick(section.id)}
-                >
-                  {section.heading}
-                </div>
-              ))}
-
-              {activeChapter.activities.length > 0 && (
+              {activeChapter.type === 'glossary' ? (
+                activeChapter.sections.map(sec => (
+                  <div
+                    key={sec.id}
+                    className={`toc-item${activeSectionId === sec.id ? ' active' : ''}`}
+                    onClick={() => onSectionClick(sec.id)}
+                  >
+                    {sec.label}
+                  </div>
+                ))
+              ) : (
                 <>
                   <div
                     className="toc-h toc-h-clickable"
-                    onClick={() => onSectionClick(activeChapter.activities[0]?.anchor)}
-                  >Activities</div>
-                  {activeChapter.activities.map(activity => (
+                    onClick={() => onSectionClick(activeChapter.readSections[0]?.id)}
+                  >Read</div>
+                  {activeChapter.readSections.map(section => (
                     <div
-                      key={activity.id}
-                      className={`toc-item${isActivityActive(activity) ? ' active' : ''}`}
-                      onClick={() => onSectionClick(activity.anchor)}
+                      key={section.id}
+                      className={`toc-item${isReadSectionActive(section.id) ? ' active' : ''}`}
+                      onClick={() => onSectionClick(section.id)}
                     >
-                      {activity.tocTitle}
+                      {section.heading}
                     </div>
                   ))}
-                </>
-              )}
 
-              {activeChapter.resources.length > 0 && (
-                <div
-                  className={`toc-h toc-h-clickable${activeSectionId === 'resources' ? ' active' : ''}`}
-                  onClick={() => onSectionClick('resources')}
-                >Resources</div>
+                  {activeChapter.activities.length > 0 && (
+                    <>
+                      <div
+                        className="toc-h toc-h-clickable"
+                        onClick={() => onSectionClick(activeChapter.activities[0]?.anchor)}
+                      >Activities</div>
+                      {activeChapter.activities.map(activity => (
+                        <div
+                          key={activity.id}
+                          className={`toc-item${isActivityActive(activity) ? ' active' : ''}`}
+                          onClick={() => onSectionClick(activity.anchor)}
+                        >
+                          {activity.tocTitle}
+                        </div>
+                      ))}
+                    </>
+                  )}
+
+                  {activeChapter.resources.length > 0 && (
+                    <div
+                      className={`toc-h toc-h-clickable${activeSectionId === 'resources' ? ' active' : ''}`}
+                      onClick={() => onSectionClick('resources')}
+                    >Resources</div>
+                  )}
+                </>
               )}
             </div>
           )}

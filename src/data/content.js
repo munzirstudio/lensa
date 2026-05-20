@@ -2224,4 +2224,676 @@ walking in blind.`,
       },
     ],
   },
+  {
+    id: 7,
+    slug: 'prompt-library',
+    title: 'Prompt Library',
+    tagline: 'Every prompt from this course, in one place.',
+    meta: '07 · Prompt Library',
+    type: 'library',
+    categories: [
+      { id: 'context-engineering', label: 'Context Engineering', description: 'Foundation skill. Use before any stage.', count: 3 },
+      { id: 'empathise',           label: 'Empathise',           description: 'Understand your user before you design anything.', count: 3 },
+      { id: 'define',              label: 'Define',              description: 'Synthesise research into a sharp problem statement.', count: 3 },
+      { id: 'ideate-prototype',    label: 'Ideate & Prototype',  description: 'Generate ideas. Build just enough to test.', count: 3 },
+      { id: 'test',                label: 'Test',                description: 'Validate before you build. Fix before users hit it.', count: 3 },
+      { id: 'go-agentic',         label: 'Go Agentic',          description: 'Move from prompts to systems.', count: 2 },
+    ],
+    readSections: [],
+    activities: [],
+    exercises: [],
+    resources: [],
+  },
+  {
+    id: 8,
+    slug: 'glossary',
+    title: 'Glossary',
+    tagline: 'Key terms from this course — design thinking, AI, and the language that connects them.',
+    meta: '08 · Glossary',
+    type: 'glossary',
+    sections: [
+      { id: 'design-thinking', label: 'Design Thinking' },
+      { id: 'ai-prompting',    label: 'AI & Prompting' },
+    ],
+    readSections: [],
+    activities: [],
+    exercises: [],
+    resources: [],
+  },
 ]
+
+export const PROMPT_LIBRARY = [
+  {
+    id: 'CE-1',
+    category: 'context-engineering',
+    categoryLabel: 'Context Engineering',
+    title: '🚲 Lite Context Engineering',
+    whenToUse: 'Quick brainstorm, low stakes, internal draft. ~2 minutes.',
+    chapterRef: { chapterId: 1, exerciseId: 1 },
+    prompt: `📍 BACKGROUND & CONTEXT
+[What's the situation? What's been tried? Why now?]
+
+🚧 KNOWN CONSTRAINTS
+[What limits exist? Timeline, budget, expertise, technical, regulatory?]
+
+💛 PERSPECTIVE FRAMING
+[What matters to you? What would success look like? What are your hunches?]
+
+→ WHAT I NEED HELP WITH
+[Your specific request]`,
+  },
+  {
+    id: 'CE-2',
+    category: 'context-engineering',
+    categoryLabel: 'Context Engineering',
+    title: '🏎 Pro Context Engineering',
+    whenToUse: 'Stakeholder-facing work, research plans, important decisions. ~10 minutes.',
+    chapterRef: { chapterId: 1, exerciseId: 2 },
+    prompt: `📍 BACKGROUND & CONTEXT
+[Concise, rich background. Current challenges, past failures, timing urgency.]
+
+🎯 USER CONTEXT
+[Who is the user? What do we know / what's been validated about them?]
+
+🚧 KNOWN CONSTRAINTS
+[What limits exist? Timeline, budget, expertise, technical, regulatory?]
+
+💛 PERSPECTIVE FRAMING
+[What to emphasise or avoid? Success criteria, risk tolerance, your hunches.]
+
+→ WHAT I NEED HELP WITH
+[Your specific request]`,
+  },
+  {
+    id: 'CE-3',
+    category: 'context-engineering',
+    categoryLabel: 'Context Engineering',
+    title: '🚀 Power Up Context Engineering',
+    whenToUse: 'High stakes, multiple unknowns, cross-team work. ~10 minutes. Normal to discover new uncertainties.',
+    chapterRef: { chapterId: 1, exerciseId: 3 },
+    prompt: `📍 BACKGROUND & CONTEXT
+[Concise, rich background. Current challenges, past failures, timing urgency.]
+
+🎯 USER CONTEXT
+[Who is the user? What do we know / what's been validated about them?]
+
+📊 STRUCTURED DATA (if applicable)
+[Paste data from Excel/Sheets. Quantitative analytics, error logs, feedback.]
+
+🚧 KNOWN CONSTRAINTS
+[What limits exist? Timeline, budget, expertise, technical, regulatory?]
+
+💛 PERSPECTIVE FRAMING
+[What to emphasise or avoid? Success criteria, risk tolerance, your hunches.]
+
+🔍 UNKNOWN
+[Flag what you DON'T know yet.
+e.g. "UNKNOWN: whether users would pay for this"
+     "UNKNOWN: if infrastructure can handle the load"]
+
+--- POWER-UPS (optional) ---
+
+👥 INTENDED AUDIENCE
+[Who this output is for. Technical level? What action do we want them to take?]
+
+🔄 WORKING STYLE
+[How you want to collaborate:
+"Challenge my assumptions first"
+"Give 3 options, I'll pick one"
+"Build incrementally — show me your reasoning"]
+
+→ WHAT I NEED HELP WITH
+[Your specific request]`,
+  },
+  {
+    id: 'E-1',
+    category: 'empathise',
+    categoryLabel: 'Empathise',
+    title: 'Landscape Analysis',
+    whenToUse: 'Before user research — map the market and problem space.',
+    chapterRef: { chapterId: 2, exerciseId: 1 },
+    prompt: `📍 BACKGROUND & CONTEXT
+[Describe your problem space. What do you already know? What feels incomplete?]
+
+👥 INTENDED AUDIENCE
+This is for me as a product owner (and anyone working with me). I'm trying
+to make better product and research decisions, decide where to focus next,
+and understand which areas might turn into viable opportunities.
+
+🎯 USER CONTEXT
+[What types of users do you know about? Include assumptions you're holding.]
+
+🚧 KNOWN CONSTRAINTS
+[What limits your research? Time, budget, access, market, regulatory?]
+
+💛 PERSPECTIVE FRAMING
+[What matters most? What would a great outcome look like?
+Share your hunches — even half-formed ones.]
+
+⚙️ WORKING STYLE
+Provide rationale backed by real sources. Challenge my assumptions.
+Show my blind spots. Indicate where you're confident and where you're not.
+
+→ WHAT I NEED HELP WITH
+Run me a deep landscape analysis of this problem space.`,
+  },
+  {
+    id: 'E-2',
+    category: 'empathise',
+    categoryLabel: 'Empathise',
+    title: 'Synthetic User',
+    whenToUse: 'Build a layered AI persona to stress-test your interview guide.',
+    chapterRef: { chapterId: 2, exerciseId: 2 },
+    prompt: `You are a synthetic user representing the persona below.
+
+BASE LAYER — Who they are:
+[Job title, industry, company size, years of experience.]
+
+ENVIRONMENT — How they work:
+[Tools they use daily. Team size. How decisions get made.]
+
+MOTIVATIONS — What they're trying to achieve:
+[What does success look like this quarter? What are they measured on?]
+
+PAIN POINTS — Where they get stuck:
+[What frustrates them? What workarounds have they built?]
+
+COGNITIVE LAYER — How they think:
+[Mental models. How they process information. What makes them trust something.]
+
+EMOTIONAL LAYER — What they feel:
+[What they're afraid of getting wrong. What gives them satisfaction.]
+
+CULTURAL LAYER — Context and norms:
+[Communication style. Relationship to authority. Regional context.]
+
+FRICTION LAYER — What breaks it for them:
+[Specific breaking points. "If X happens, I will abandon this immediately."]
+
+RULES FOR THIS INTERACTION:
+- Stay strictly within this persona's knowledge and experience
+- If something is outside the persona's world, show confusion — don't invent
+- Express opinions in the persona's voice, not a neutral AI voice
+- React the way this specific person would, not generically
+
+I will now ask you interview questions. Respond as this person.`,
+  },
+  {
+    id: 'E-3',
+    category: 'empathise',
+    categoryLabel: 'Empathise',
+    title: 'Research Synthesis',
+    whenToUse: 'After real interviews — extract pain points and POV directions.',
+    chapterRef: { chapterId: 2, exerciseId: 3 },
+    prompt: `You are a design research analyst.
+
+Here are raw user interview notes from a study on [describe who you talked
+to, what you were exploring, how many participants]:
+
+[PASTE YOUR RAW NOTES HERE — label each with participant code P1, P2…]
+
+Your task:
+
+1. Extract the top 5 pain points. For each:
+   - Pain point statement (1 clear, specific sentence)
+   - Most representative quote (verbatim, with participant label)
+   - Emotional intensity: Low / Medium / High
+   - Frequency: how many participants mentioned it
+
+2. Identify 1–2 surprising findings that challenged your assumptions.
+
+3. Flag research gaps: what questions remain unanswered?
+
+4. Suggest 3 POV statement directions.
+   Format: [User type] needs [specific need] because [non-obvious insight].
+
+Rules:
+- Structured numbered list only. No paragraph summaries.
+- Quote verbatim — do not paraphrase.
+- If uncertain, say so. Do not invent insights.`,
+  },
+  {
+    id: 'D-1',
+    category: 'define',
+    categoryLabel: 'Define',
+    title: 'Journey Map Accelerator',
+    whenToUse: 'Convert research notes into a structured current-state journey map.',
+    chapterRef: { chapterId: 3, exerciseId: 1 },
+    prompt: `[PASTE YOUR PROJECT CONTEXT + RESEARCH NOTES / TRANSCRIPTS HERE]
+
+→ WHAT I NEED HELP WITH
+Create a current-state journey map for [describe the scenario].
+
+Output as a table with columns:
+1. Journey Stage
+2. User Actions
+3. Touchpoints
+4. Thoughts & Emotions
+5. Pain Points
+6. Opportunities
+
+Additional analysis:
+- Highlight pain points that appear across multiple participants
+- Flag gaps where data is insufficient
+- Identify 2–3 emotionally significant moments`,
+  },
+  {
+    id: 'D-2',
+    category: 'define',
+    categoryLabel: 'Define',
+    title: 'POV Statement Generator',
+    whenToUse: 'Align the team on the single most important user need to solve.',
+    chapterRef: { chapterId: 3, exerciseId: 2 },
+    prompt: `You are a design thinking facilitator running a Define workshop.
+
+Based on this user research summary:
+[PASTE YOUR TOP PAIN POINTS, SURPRISING INSIGHTS, USER GROUP DESCRIPTION]
+
+Write a Point of View statement using this format exactly:
+[User description] needs [specific need] because [surprising insight].
+
+Rules:
+- User description must be specific, not generic
+- Need must be concrete and actionable
+- "Because" MUST be non-obvious — not a restatement of the need
+- If it could be predicted before doing research, rewrite it
+- Generate 3 options
+- Recommend the strongest and explain why in 2 sentences`,
+  },
+  {
+    id: 'D-3',
+    category: 'define',
+    categoryLabel: 'Define',
+    title: 'HMW Question Generator',
+    whenToUse: 'Generate How Might We questions to drive ideation.',
+    chapterRef: { chapterId: 3, exerciseId: 3 },
+    prompt: `You are a design thinking facilitator.
+
+Here is our Point of View statement:
+[POV STATEMENT]
+
+Generate 8 'How Might We' questions for our ideation session.
+
+Each HMW must:
+- Start with "How might we..."
+- Be specific enough to act on
+- NOT contain the solution in the question
+- Open multiple possible directions
+
+Then:
+- Flag which 2 are too broad
+- Flag which 2 are too narrow
+- Recommend the 4 best ones and explain why`,
+  },
+  {
+    id: 'I-1',
+    category: 'ideate-prototype',
+    categoryLabel: 'Ideate & Prototype',
+    title: 'Ideation at Large',
+    whenToUse: "Cross-industry inspiration — find what your competitors can't see.",
+    chapterRef: { chapterId: 4, exerciseId: 1 },
+    prompt: `[PASTE YOUR CONTEXT ENGINEERING — project context, user, constraints]
+
+💛 PERSPECTIVE FRAMING
+The user's pain point is: [describe the pain point].
+Turn this into a high-value HMW.
+
+✅ WHAT I NEED HELP WITH
+Based on the HMW, show me how these industries solved similar problems:
+
+1. CURRENT INDUSTRY: Same domain already addressing this
+2. COMPARABLE INDUSTRY: Different field, similar challenges, solved well
+3. SMART ADJACENCY: Unexpected industry, surprisingly relevant
+
+For each:
+- What was their core insight?
+- What mechanism did they use?
+- What's transferable to my context?`,
+  },
+  {
+    id: 'I-2',
+    category: 'ideate-prototype',
+    categoryLabel: 'Ideate & Prototype',
+    title: 'Storyboard Generator',
+    whenToUse: 'Narrative your solution before touching any design tool.',
+    chapterRef: { chapterId: 4, exerciseId: 2 },
+    prompt: `You are a UX designer and narrative strategist.
+
+Solution idea:
+[DESCRIBE YOUR SOLUTION IN 2-3 SENTENCES]
+
+User persona:
+[PASTE YOUR SYNTHETIC USER PROFILE]
+
+Create a storyboard with 6–8 scenes showing this user's experience.
+
+For each scene:
+- Scene title
+- What the user is doing
+- What they see or interact with
+- What they're thinking (use their voice)
+- What they're feeling (name the emotion)
+- Any friction or hesitation
+
+After the storyboard:
+- Identify the 2 scenes most likely to cause drop-off
+- Flag assumptions we haven't validated yet`,
+  },
+  {
+    id: 'I-3',
+    category: 'ideate-prototype',
+    categoryLabel: 'Ideate & Prototype',
+    title: 'Prototype Prompt Generator',
+    whenToUse: 'Let Claude deconstruct your storyboard into a Lovable/Figma Make brief.',
+    chapterRef: { chapterId: 4, exerciseId: 3 },
+    prompt: `The above is my storyboard and details of my synthetic user.
+Deconstruct it into a prompt for me to build a prototype in
+Figma Make / Lovable / v0.
+
+My storyboard:
+[PASTE YOUR STORYBOARD SCENES]
+
+My synthetic user:
+[PASTE YOUR SYNTHETIC USER PROFILE]
+
+Generate a prototype brief including:
+1. ONE-LINE PRODUCT DESCRIPTION
+2. TARGET USER SNAPSHOT (3–5 bullets)
+3. SCREENS TO BUILD (intent, content, actions, scope guard per screen)
+4. INTERACTION PRINCIPLES (3–4 rules from the user's friction layer)
+5. CONTENT NOTES (real placeholder copy, not lorem ipsum)
+6. BUILD INSTRUCTION (what to prioritise, what to leave out)`,
+  },
+  {
+    id: 'T-1',
+    category: 'test',
+    categoryLabel: 'Test',
+    title: 'Synthetic Usability Test',
+    whenToUse: 'AI as crash test dummy — find obvious friction before real sessions.',
+    chapterRef: { chapterId: 5, exerciseId: 1 },
+    prompt: `You are a synthetic user conducting a think-aloud usability test.
+
+RESEARCH OBJECTIVE:
+[What are we testing? What assumption?]
+
+YOUR SYNTHETIC USER PROFILE:
+[PASTE FULL PROFILE — all five layers]
+
+PROTOTYPE DESCRIPTION:
+[What the prototype does. Main screens and flows available.]
+
+TASK TO COMPLETE:
+[Write as a goal, not an instruction.]
+
+TESTING RULES:
+- Think aloud — narrate everything
+- React as this specific person would
+- When confused, express it — don't figure it out silently
+- Complete the task or give up — don't ask for help
+
+REPORT AT THE END:
+1. Completed? Yes / Partial / No
+2. Where did you get stuck or confused?
+3. What was unclear in the language or labels?
+4. What was missing that you needed?
+5. Would you use this in your real workflow? Why?
+Rate each issue: Critical / Major / Minor`,
+  },
+  {
+    id: 'T-2',
+    category: 'test',
+    categoryLabel: 'Test',
+    title: 'Usability Test Script Generator',
+    whenToUse: 'Generate a clean, unbiased test script for real user sessions.',
+    chapterRef: { chapterId: 5, exerciseId: 2 },
+    prompt: `You are a UX research specialist preparing a usability test.
+
+Prototype description: [WHAT DOES IT DO?]
+Key assumption to test: [THE ONE THING TO VALIDATE]
+Target user: [WHO IS PARTICIPATING]
+
+Generate a usability test script with:
+1. Facilitator briefing script
+2. 2 warm-up questions (context, not product)
+3. 3 task scenarios (goals in user language, not instructions)
+4. 2–3 probing questions per task
+5. 2 closing questions (reaction + likelihood to use)
+
+Rules: No leading questions. No yes/no. No questions that reveal
+correct behaviour. Tasks must be goals, not step-by-step instructions.`,
+  },
+  {
+    id: 'T-3',
+    category: 'test',
+    categoryLabel: 'Test',
+    title: 'Session Synthesis',
+    whenToUse: 'Extract structured issue list from messy session notes.',
+    chapterRef: { chapterId: 5, exerciseId: 3 },
+    prompt: `You are a UX research analyst.
+
+Notes from [N] usability sessions on [prototype name]:
+[PASTE NOTES — label P1, P2… and T1, T2… where relevant]
+
+Your task:
+1. All usability issues found. For each:
+   - Issue description (1 sentence)
+   - Where it occurs
+   - Severity: Critical / Major / Minor
+   - Frequency: how many participants
+   - Best supporting quote (verbatim)
+
+2. Unexpected positive moments
+
+3. Top 3 issues to fix before next round
+
+4. Issues suggesting a more fundamental problem
+   (concept/flow level, not just UI)
+
+Sorted by severity. No paragraph summaries.`,
+  },
+  {
+    id: 'A-1',
+    category: 'go-agentic',
+    categoryLabel: 'Go Agentic',
+    title: 'Agentic GA4 Prompt',
+    whenToUse: 'Let an AI agent analyse your GA4 data autonomously.',
+    chapterRef: { chapterId: 6, exerciseId: 1 },
+    prompt: `Our business goal this year is to [state your business goal].
+
+We need a data-backed understanding of how people are finding us,
+what they're doing on the site, and where we're losing them.
+Using Google Analytics 4.
+
+Duration: Jan to today
+Feature: Reports / Explore — whatever fits the question
+
+What I want to know:
+1. Traffic Quality — which channels bring the most engaged visitors?
+2. User Paths — most common paths from landing to exit; where do
+   users drop off?
+3. Content Performance — highest engagement and worst exit rate pages
+
+Output: plain language insights, supporting metrics, explain any
+jargon, include dashboard URLs or snapshots referenced.`,
+  },
+  {
+    id: 'A-2',
+    category: 'go-agentic',
+    categoryLabel: 'Go Agentic',
+    title: 'Workflow Audit',
+    whenToUse: 'Find the highest-leverage AI integration points in your workflow.',
+    chapterRef: { chapterId: 6, exerciseId: 2 },
+    prompt: `You are an AI integration strategist.
+
+My current workflow:
+[DESCRIBE FROM KICK-OFF TO DELIVERY — who, how long, where you
+get stuck, what's repetitive, what costs the most effort]
+
+Identify:
+1. Top 3 highest-leverage AI integration points
+2. For each: what AI does, which tool, time saved, human judgement needed
+3. The integration point to NOT start with, and why
+4. A 4-week implementation plan, lowest risk first`,
+  },
+]
+
+export const GLOSSARY_DATA = {
+  sections: [
+    {
+      id: 'design-thinking',
+      label: 'Design Thinking',
+      terms: [
+        {
+          term: 'Affinity Clustering',
+          definition: 'A synthesis technique where raw research observations are grouped into themed clusters. The key: name each cluster with an insight statement, not a label. "Users feel embarrassed when they make mistakes" beats "User errors."',
+        },
+        {
+          term: 'Design Thinking',
+          definition: 'A human-centred approach to innovation and problem-solving. Combines empathy, creativity, and rationality. Non-linear — teams move back and forth between stages based on what they learn. Best used when the problem is ambiguous and the solution is unknown.',
+        },
+        {
+          term: 'Double Diamond',
+          definition: 'A model that maps Design Thinking into two phases of diverging and converging thought. First diamond: Discover (wide exploration) → Define (narrow to the right problem). Second diamond: Develop (wide ideation) → Deliver (narrow to the right solution).',
+        },
+        {
+          term: 'Empathise',
+          definition: "The first DT stage. Understanding the person you're designing for — their situation, frustrations, motivations, and the gap between what they say and what they actually do. Involves landscape research, user interviews, observation, and synthesis.",
+        },
+        {
+          term: 'Define',
+          definition: 'The second DT stage. Synthesising research into a sharp, actionable problem statement. Key outputs: affinity clusters, POV statement, HMW questions, and a journey map.',
+        },
+        {
+          term: 'Ideate',
+          definition: 'The third DT stage. Structured divergence — generating as many ideas as possible before judging any. Quantity before quality. Tools include brainstorming, SCAMPER, Lightning Demos, and cross-industry inspiration.',
+        },
+        {
+          term: 'Prototype',
+          definition: 'The fourth DT stage. Building the minimum version needed to test your most important assumption. Not a final product — a question made physical. Match fidelity to the question you\'re testing.',
+        },
+        {
+          term: 'Test',
+          definition: 'The fifth DT stage. Putting prototypes in front of real users and observing what actually happens. Informs iteration. Feeds back into Empathise and Define.',
+        },
+        {
+          term: 'HMW (How Might We)',
+          definition: 'A question format that reframes a user problem as a design opportunity. Rules: not too broad ("How might we fix the app?"), not too narrow ("How might we add a blue button?"). Should be specific enough to act on but open enough for multiple solutions.',
+        },
+        {
+          term: 'JTBD (Jobs-to-be-Done)',
+          definition: '"When [situation], I want to [motivation], so I can [outcome]." Focuses on the underlying job a user is hiring a product to do, not just their stated preferences.',
+        },
+        {
+          term: 'Journey Map',
+          definition: 'A visualisation of the user\'s experience across time — stages, actions, touchpoints, thoughts, emotions, pain points, and opportunities. A current-state map shows how things are now. A future-state map shows how they should be.',
+        },
+        {
+          term: 'POV Statement (Point of View)',
+          definition: 'A single, team-aligned problem statement framed from the user\'s perspective. Format: [User] needs [specific need] because [non-obvious insight]. The "because" must be a genuine insight — not something you could have written before doing research.',
+        },
+        {
+          term: 'Prototype Fidelity',
+          definition: 'How closely a prototype resembles the final product. Low fidelity (paper, sketches) = fast and cheap, best for testing concepts. High fidelity (coded, interactive) = slower, best for testing feel and interaction. Match fidelity to the question you\'re testing, not your comfort level.',
+        },
+        {
+          term: 'RITE (Rapid Iterative Testing and Evaluation)',
+          definition: 'A testing methodology where you fix issues between sessions rather than waiting until the end. 3–4 rounds of 3–4 participants each. Problems get fixed while they\'re still cheap to fix.',
+        },
+        {
+          term: 'Sprint (Design Sprint)',
+          definition: "Jake Knapp's 5-day framework for compressing months of work into one week: Map → Sketch → Decide → Prototype → Test. Includes the Decider role, Lightning Demos, Note-and-Vote, and a \"Fake It\" Friday prototype designed to look real but built in one day.",
+        },
+        {
+          term: 'Synthesis',
+          definition: 'The process of making sense of raw research. Involves extracting observations, clustering by theme, identifying patterns across participants, and interpreting what the data means — not just what it says.',
+        },
+        {
+          term: 'Touchpoint',
+          definition: 'Any point of interaction between a user and a product, service, or organisation. Includes digital (app screens, emails), physical (signage, packaging), and human (customer service, sales calls).',
+        },
+      ],
+    },
+    {
+      id: 'ai-prompting',
+      label: 'AI & Prompting',
+      terms: [
+        {
+          term: 'Agent / AI Agent',
+          definition: "An AI that doesn't just answer questions — it takes actions. Uses tools, makes decisions, and loops through a problem until it reaches a goal. Components: the brain (LLM), memory (context), tools (what it can do), and system prompt (job description).",
+        },
+        {
+          term: 'Agentic Workflow',
+          definition: 'A process where one or more AI agents autonomously complete a sequence of tasks — navigating tools, making decisions, and producing output — with human oversight at key checkpoints.',
+        },
+        {
+          term: 'Claude',
+          definition: "Anthropic's AI model. Used throughout this course for research, synthesis, storyboarding, and prompt generation. Claude Research mode (similar to ChatGPT Deep Research) can run autonomous multi-source analysis.",
+        },
+        {
+          term: 'Context Engineering',
+          definition: 'The practice of structuring your AI prompt with rich context — background, user context, constraints, perspective framing, and unknowns — so AI can produce useful, targeted output the first time. Prevents looping in refinement hell.',
+        },
+        {
+          term: 'Context Window',
+          definition: "The amount of text an AI model can process in a single conversation. Everything inside the window shapes the response. Once something falls outside the context window, the model can't reference it.",
+        },
+        {
+          term: 'Deep Research (ChatGPT / Claude)',
+          definition: 'An AI mode that autonomously searches multiple web sources, synthesises findings, and produces a structured research report. Equivalent to hours of desk research compressed into minutes. Requires a well-structured Power Up prompt to get precise results.',
+        },
+        {
+          term: 'Hallucination',
+          definition: 'When an AI model generates confident-sounding information that is factually incorrect or entirely fabricated. Always validate AI outputs against real sources, especially for specific facts, statistics, and quotes.',
+        },
+        {
+          term: 'LLM (Large Language Model)',
+          definition: 'The underlying technology behind AI tools like Claude, ChatGPT, and Gemini. Trained on large amounts of text to predict and generate language. The "brain" of an AI agent.',
+        },
+        {
+          term: 'MCP (Model Context Protocol)',
+          definition: 'A standard that lets AI models connect to external tools and data sources — including Figma, Google Drive, Slack, and databases — so agents can read and write to real systems, not just generate text.',
+        },
+        {
+          term: 'Perspective Framing',
+          definition: 'The section of a context-engineered prompt where you share your hunches, priorities, and what good looks like. The most underused component. This is where you inject your judgment — what makes AI amplify your thinking instead of giving generic output.',
+        },
+        {
+          term: 'Prompt',
+          definition: 'The instruction you give an AI model. Quality of the prompt directly determines quality of the output. A one-liner and a Power Up prompt on the same task will produce very different results.',
+        },
+        {
+          term: 'Synthetic User',
+          definition: 'An AI-generated profile that simulates a specific user type — built across multiple layers (base, cognitive, emotional, cultural, friction). Used to stress-test interview guides, prototype flows, and test scripts before spending recruitment budget on real participants. Not a replacement for real users — preparation for them.',
+        },
+        {
+          term: 'System Prompt',
+          definition: "A set of instructions given to an AI agent that defines its role, personality, constraints, and operating rules. The agent's job description. Users don't see it, but it shapes every response.",
+        },
+        {
+          term: 'Token',
+          definition: 'The basic unit AI models process. Roughly 0.75 words. Models have a maximum token limit per request (context window). Longer prompts and conversations consume more tokens.',
+        },
+        {
+          term: 'Vibe Coding',
+          definition: 'Describing what you want in natural language and having AI generate working code. Tools include Lovable, v0, Cursor, and Claude Code. Fast initial results — but without a storyboard and user intent mapped first, iteration loops compound quickly.',
+        },
+      ],
+    },
+  ],
+}
+
+// Populate Prompt Library chapter exercises so the right sidebar can look them up
+const _libChapter = CHAPTERS.find(c => c.id === 7)
+if (_libChapter) {
+  _libChapter.exercises = PROMPT_LIBRARY.map(card => ({
+    id: card.id,
+    title: card.title,
+    sectionLabel: card.categoryLabel,
+    prompt: card.prompt,
+    sample: (() => {
+      if (!card.chapterRef?.exerciseId) return null
+      const rc = CHAPTERS.find(c => c.id === card.chapterRef.chapterId)
+      return rc?.exercises.find(e => e.id === card.chapterRef.exerciseId)?.sample ?? null
+    })(),
+  }))
+}
