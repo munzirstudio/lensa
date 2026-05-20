@@ -39,7 +39,7 @@ function PromptCard({ exercise, isActive, onActivate, onViewActivity }) {
   return (
     <div
       className={`prompt-card${isActive ? ' active' : ''}`}
-      onClick={() => onActivate(exercise, 'prompt')}
+      onClick={() => onActivate(exercise, 'template')}
     >
       <div className="card-label">
         <IconClock />
@@ -48,26 +48,10 @@ function PromptCard({ exercise, isActive, onActivate, onViewActivity }) {
       <div className="card-actions">
         <button
           className="btn btn-dark"
-          onClick={e => { e.stopPropagation(); onActivate(exercise, 'prompt') }}
+          onClick={e => { e.stopPropagation(); onActivate(exercise, 'template') }}
         >
           View prompt
         </button>
-        {exercise.sample && (
-          <button
-            className="btn btn-light"
-            onClick={e => { e.stopPropagation(); onActivate(exercise, 'sample') }}
-          >
-            View sample
-          </button>
-        )}
-        {onViewActivity && (
-          <button
-            className="btn btn-light"
-            onClick={e => { e.stopPropagation(); onViewActivity() }}
-          >
-            View activity
-          </button>
-        )}
       </div>
     </div>
   )
@@ -101,10 +85,7 @@ function LibraryContent({ chapter, activeExercise, onActivateExercise, onNavigat
                   key={card.id}
                   exercise={exercise}
                   isActive={isExerciseActive(card.id)}
-                  onActivate={handleActivate}
-                  onViewActivity={card.chapterRef?.chapterId != null
-                    ? () => onNavigateToActivity(card.chapterRef.chapterId, card.chapterRef.exerciseId)
-                    : undefined}
+                  onActivate={(ex, view) => onActivateExercise(chapter.id, ex.id, view, card.chapterRef ?? null)}
                 />
               )
             })}

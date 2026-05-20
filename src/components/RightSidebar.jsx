@@ -1,7 +1,13 @@
 import { useState, useEffect } from 'react'
 import mixpanel from '../lib/mixpanel'
 
-export default function RightSidebar({ open, exercise, view = 'prompt', onClose }) {
+const TABS = [
+  { id: 'template', label: 'Template' },
+  { id: 'sample', label: 'Sample' },
+  { id: 'activity', label: 'Activity' },
+]
+
+export default function RightSidebar({ open, exercise, view = 'template', onClose, onTabChange, onActivityTab }) {
   const [copied, setCopied] = useState(false)
 
   useEffect(() => {
@@ -23,6 +29,19 @@ export default function RightSidebar({ open, exercise, view = 'prompt', onClose 
     })
   }
 
+  function handleTabClick(tabId) {
+    mixpanel.track('Sidebar Tab Clicked', {
+      tab: tabId,
+      exercise_title: exercise?.title,
+      section_label: exercise?.sectionLabel,
+    })
+    if (tabId === 'activity') {
+      onActivityTab?.()
+    } else {
+      onTabChange?.(tabId)
+    }
+  }
+
   return (
     <aside className={`sidebar-right${open ? '' : ' hidden'}`}>
       <div className="sr-header">
@@ -33,7 +52,6 @@ export default function RightSidebar({ open, exercise, view = 'prompt', onClose 
           <span className="sr-back-title">{exercise?.title ?? 'Select a prompt'}</span>
         </button>
         <div className="sr-meta">
-          <div className="sr-sec">{exercise?.sectionLabel ?? 'Prompt'}</div>
           <div className="sr-name">{exercise?.title ?? 'Select a prompt'}</div>
         </div>
         <button
@@ -58,6 +76,18 @@ export default function RightSidebar({ open, exercise, view = 'prompt', onClose 
             </>
           )}
         </button>
+      </div>
+
+      <div className="sr-tabs">
+        {TABS.map(tab => (
+          <button
+            key={tab.id}
+            className={`sr-tab${view === tab.id ? ' active' : ''}`}
+            onClick={() => handleTabClick(tab.id)}
+          >
+            {tab.label}
+          </button>
+        ))}
       </div>
 
       <div className="sr-body">

@@ -54,7 +54,7 @@ export default function App() {
     return () => container.removeEventListener('scroll', handleScroll)
   }, [activeChapterId, activeChapter])
 
-  function activateExercise(chapterId, exerciseId, view = 'prompt') {
+  function activateExercise(chapterId, exerciseId, view = 'template', activityRef = null) {
     // Toggle: same exercise + same view collapses the sidebar
     if (
       activeExercise?.chapterId === chapterId &&
@@ -74,7 +74,7 @@ export default function App() {
       exercise_title: exercise?.title,
       view,
     })
-    setActiveExercise({ chapterId, exerciseId, view })
+    setActiveExercise({ chapterId, exerciseId, view, activityRef })
     setRightSidebarOpen(true)
   }
 
@@ -159,8 +159,32 @@ export default function App() {
         <RightSidebar
           open={rightSidebarOpen && activeChapter?.type !== 'glossary'}
           exercise={getActiveExerciseData()?.exercise ?? null}
-          view={getActiveExerciseData()?.view ?? 'prompt'}
+          view={getActiveExerciseData()?.view ?? 'template'}
           onClose={() => { setActiveExercise(null); setRightSidebarOpen(false); }}
+          onTabChange={(newView) => {
+            if (activeExercise) setActiveExercise({ ...activeExercise, view: newView })
+          }}
+          onActivityTab={activeExercise ? () => {
+            const ref = activeExercise.activityRef
+            const targetChapterId = ref?.chapterId != null ? ref.chapterId : activeExercise.chapterId
+            const targetExerciseId = ref?.exerciseId ?? activeExercise.exerciseId
+            const chapter = CHAPTERS.find(c => c.id === targetChapterId)
+            mixpanel.track('View Activity Clicked', {
+              to_chapter_id: targetChapterId,
+              to_chapter_title: chapter?.title,
+              exercise_id: targetExerciseId,
+            })
+            setActiveChapterId(targetChapterId)
+            if (mainRef.current) mainRef.current.scrollTop = 0
+            setTimeout(() => {
+              const ch = CHAPTERS.find(c => c.id === targetChapterId)
+              const activity = ch?.activities.find(a => a.exerciseIds.includes(targetExerciseId))
+              if (activity && mainRef.current) {
+                const el = mainRef.current.querySelector(`#${activity.anchor}`)
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }
+            }, 80)
+          } : undefined}
         />
       </div>
     </div>
