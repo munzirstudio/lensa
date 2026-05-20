@@ -85,11 +85,12 @@ export default function App() {
     return { exercise, view: activeExercise.view ?? 'prompt' }
   }
 
-  function handleChapterClick(chapterId) {
+  function handleChapterClick(chapterId, source = 'sidebar') {
     const chapter = CHAPTERS.find(c => c.id === chapterId)
     mixpanel.track('Chapter Viewed', {
       chapter_id: chapterId,
       chapter_title: chapter?.title,
+      source,
     })
     setActiveChapterId(chapterId)
     setActiveExercise(null)
@@ -158,7 +159,7 @@ export default function App() {
           chapter={activeChapter}
           activeExercise={activeExercise}
           onActivateExercise={activateExercise}
-          onNextChapter={() => handleChapterClick(activeChapterId + 1)}
+          onNextChapter={() => handleChapterClick(activeChapterId + 1, 'keep_learning')}
           onNavigateToChapter={handleChapterClick}
           onNavigateToActivity={handleNavigateToActivity}
         />
