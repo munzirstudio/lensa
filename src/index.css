@@ -595,3 +595,111 @@ html, body, #root {
   color: var(--text-muted);
   line-height: 23px;
 }
+
+/* ── Mobile responsive ───────────────────────────────────────────── */
+.mob-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.mob-menu-btn:hover { background: var(--bg-sidebar); }
+
+.sr-back-btn {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  min-width: 0;
+  flex: 1;
+}
+.sr-back-btn:hover { color: var(--text-primary); }
+.sr-back-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.drawer-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  top: 49px;
+  background: rgba(38,37,30,0.3);
+  z-index: 39;
+}
+
+@media (max-width: 768px) {
+  /* TopBar */
+  .topbar { padding: 0 16px; }
+  .course-btn { display: none; }
+  .icon-btn { display: none; }
+  .mob-menu-btn { display: flex; }
+
+  /* Left sidebar — mobile drawer */
+  .sidebar-left {
+    position: fixed;
+    top: 49px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 40;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    border-right: none;
+  }
+  .sidebar-left.drawer-open { transform: translateX(0); }
+  .drawer-backdrop { display: block; opacity: 0; pointer-events: none; transition: opacity 0.25s ease; }
+  .drawer-backdrop.visible { opacity: 1; pointer-events: auto; }
+
+  /* Main content */
+  .main { padding: 0; }
+  .content-wrap { padding: 32px 20px 60px; }
+  .hero {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    height: 212px;
+    border-radius: 0;
+    margin-bottom: 32px;
+  }
+
+  /* Right sidebar — full screen on mobile */
+  .sidebar-right {
+    position: fixed;
+    top: 49px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    z-index: 30;
+    transform: translateX(0);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .sidebar-right.hidden {
+    width: 100%;
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  /* Back button — show on mobile */
+  .sr-back-btn { display: flex; }
+  .sr-meta { display: none; } /* hide the two-line meta, replaced by back button */
+}

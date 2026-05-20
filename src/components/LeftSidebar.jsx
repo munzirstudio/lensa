@@ -4,6 +4,8 @@ export default function LeftSidebar({
   activeSectionId,
   onChapterClick,
   onSectionClick,
+  mobileDrawerOpen,
+  onCloseDrawer,
 }) {
   const activeChapter = chapters.find(c => c.id === activeChapterId)
 
@@ -16,7 +18,12 @@ export default function LeftSidebar({
   }
 
   return (
-    <aside className="sidebar-left">
+    <>
+      <div
+        className={`drawer-backdrop${mobileDrawerOpen ? ' visible' : ''}`}
+        onClick={onCloseDrawer}
+      />
+    <aside className={`sidebar-left${mobileDrawerOpen ? ' drawer-open' : ''}`}>
       {chapters.map(chapter => (
         <div key={chapter.id}>
           <div
@@ -92,5 +99,6 @@ export default function LeftSidebar({
         </div>
       ))}
     </aside>
+    </>
   )
 }

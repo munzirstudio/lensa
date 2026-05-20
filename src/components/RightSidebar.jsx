@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import mixpanel from '../lib/mixpanel'
 
-export default function RightSidebar({ open, exercise, view = 'prompt' }) {
+export default function RightSidebar({ open, exercise, view = 'prompt', onClose }) {
   const [copied, setCopied] = useState(false)
 
   useEffect(() => {
@@ -26,6 +26,12 @@ export default function RightSidebar({ open, exercise, view = 'prompt' }) {
   return (
     <aside className={`sidebar-right${open ? '' : ' hidden'}`}>
       <div className="sr-header">
+        <button className="sr-back-btn" onClick={onClose}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+          <span className="sr-back-title">{exercise?.title ?? 'Select a prompt'}</span>
+        </button>
         <div className="sr-meta">
           <div className="sr-sec">{exercise?.sectionLabel ?? 'Prompt'}</div>
           <div className="sr-name">{exercise?.title ?? 'Select a prompt'}</div>

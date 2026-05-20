@@ -11,6 +11,7 @@ export default function App() {
   const [activeExercise, setActiveExercise] = useState(null)
   const [rightSidebarOpen, setRightSidebarOpen] = useState(false)
   const [activeSectionId, setActiveSectionId] = useState(null)
+  const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false)
   const mainRef = useRef(null)
 
   const activeChapter = CHAPTERS.find(c => c.id === activeChapterId)
@@ -93,6 +94,7 @@ export default function App() {
     setActiveChapterId(chapterId)
     setActiveExercise(null)
     setRightSidebarOpen(false)
+    setMobileDrawerOpen(false)
     if (mainRef.current) {
       mainRef.current.scrollTop = 0
     }
@@ -132,6 +134,7 @@ export default function App() {
       <TopBar
         rightSidebarOpen={rightSidebarOpen}
         onToggleSidebar={() => setRightSidebarOpen(prev => !prev)}
+        onMenuToggle={() => setMobileDrawerOpen(prev => !prev)}
       />
       <div className="body-row">
         <LeftSidebar
@@ -141,6 +144,8 @@ export default function App() {
           activeSectionId={activeSectionId}
           onChapterClick={handleChapterClick}
           onSectionClick={handleSectionClick}
+          mobileDrawerOpen={mobileDrawerOpen}
+          onCloseDrawer={() => setMobileDrawerOpen(false)}
         />
         <ContentArea
           ref={mainRef}
@@ -155,6 +160,7 @@ export default function App() {
           open={rightSidebarOpen && activeChapter?.type !== 'glossary'}
           exercise={getActiveExerciseData()?.exercise ?? null}
           view={getActiveExerciseData()?.view ?? 'prompt'}
+          onClose={() => { setActiveExercise(null); setRightSidebarOpen(false); }}
         />
       </div>
     </div>
