@@ -124,6 +124,12 @@ export default function App() {
   }
 
   function handleSectionClick(sectionId) {
+    const chapter = CHAPTERS.find(c => c.id === activeChapterId)
+    mixpanel.track('Section Clicked', {
+      section_id: sectionId,
+      chapter_id: activeChapterId,
+      chapter_title: chapter?.title,
+    })
     if (!mainRef.current) return
     const el = mainRef.current.querySelector(`#${sectionId}`)
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
